@@ -126,7 +126,6 @@ if ( ! class_exists( 'YITH_YWGC_Shipping' ) ) {
 		 */
 		public function coupon_discount_amount_html( $discount_html, $coupon ) {
 
-
 			//  Check if the current coupon was used for shipping discount
 			$coupon_code     = $coupon instanceof WC_Coupon ? $coupon->code : $coupon;
 			$coupon_discount = isset( WC()->cart->gift_card_shipping_discount_amounts[ $coupon_code ] ) ?
@@ -145,14 +144,16 @@ if ( ! class_exists( 'YITH_YWGC_Shipping' ) ) {
 
 				$chosen_rate = $rates[ $chosen_method ];
 
-
 				if ( isset( $chosen_rate->gift_card_discount_amounts[ $coupon_code ] ) ) {
+
+					$discount     = $chosen_rate->gift_card_discount_amounts[ $coupon_code ];
+					$discount_tax = $chosen_rate->gift_card_discount_tax_amounts[ $coupon_code ];
+
 					$discount_html .= '<div style="font-size: smaller">' . sprintf(
 							_x( "(Include %s of shipping cost discount for the selected shipping method)",
-								'In Cart/Checkout page: %s stands for the gift card amount. ',
+								'In Cart/Checkout page: %s stands for the gift card amount.',
 								'yith-woocommerce-gift-cards' ),
-							wc_price( $chosen_rate->gift_card_discount_amounts[ $coupon_code ] ) ) .
-					                  '</div>';
+							wc_price( $discount ) ) . '</div>';
 				}
 			}
 
@@ -195,26 +196,6 @@ if ( ! class_exists( 'YITH_YWGC_Shipping' ) ) {
 			$cart_coupons              = WC()->cart->get_applied_coupons();
 			$total_discount_amount     = 0;
 			$total_discount_tax_amount = 0;
-			/*
-						foreach ( WC()->cart->get_applied_coupons() as $code ) {
-							$gift = YITH_YWGC()->get_gift_card_by_code( $code );
-
-							if ( $gift->exists() ) {
-								//  save remaining balance after product discount
-								$discount_amount     = WC()->cart->coupon_discount_amounts[ $code ];
-								$discount_tax_amount = WC()->cart->coupon_discount_tax_amounts[ $code ];
-
-								$total_discount_amount += $discount_amount;
-								$total_discount_tax_amount += $discount_tax_amount;
-
-								$cart_coupons[ $code ] = array(
-									'discount_amount'     => $discount_amount,
-									'discount_tax_amount' => $discount_tax_amount,
-									'data'                => $gift,
-								);
-							}
-						}
-			*/
 
 			/** if there aren't any gift cards in use, there is nothing to do */
 			if ( ! $cart_coupons ) {
@@ -250,7 +231,8 @@ if ( ! class_exists( 'YITH_YWGC_Shipping' ) ) {
 						}
 
 						$coupon_cart_discount_amount = WC()->cart->coupon_discount_amounts[ $code ];
-						$gift_card_updated_balance   = max( 0, $gift->get_balance( false ) - $coupon_cart_discount_amount );
+						$balance                     = apply_filters( 'yith_ywgc_convert_from_base_currency', $gift->get_balance( false ), $gift );
+						$gift_card_updated_balance = max( 0, $balance - $coupon_cart_discount_amount );
 
 						$shipping_discount = min( $rate_object->cost, $gift_card_updated_balance );
 						$new_shipping_cost = max( 0, $rate_object->cost - $shipping_discount );

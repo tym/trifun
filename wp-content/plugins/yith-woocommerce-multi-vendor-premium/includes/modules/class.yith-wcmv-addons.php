@@ -118,6 +118,7 @@ class YITH_WCMV_Addons {
      */
     public function get_plugin_landing_uri( $plugin_name, $context = 'uri' ){
         $plugin_link = '';
+        
         if( isset( $this->plugins[ $plugin_name ] ) ){
             if ( 'display' == $context ) {
                 $coming_soon = ! empty( $this->plugins[$plugin_name]['coming_soon'] ) && $this->plugins[$plugin_name]['coming_soon'] ? sprintf( '<span class="yith-wcmv-add-ons coming-soon">%s</span>', __( 'Coming Soon', 'yith-woocommerce-product-vendors' ) ) : '';

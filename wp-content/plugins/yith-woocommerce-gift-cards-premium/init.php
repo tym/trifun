@@ -5,7 +5,7 @@ Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-gift-cards/
 Description: Allow your users to purchase and give gift cards, an easy and direct way to encourage new sales.
 Author: YITHEMES
 Text Domain: yith-woocommerce-gift-cards
-Version: 1.4.13
+Version: 1.5.0
 Author URI: http://yithemes.com/
 */
 
@@ -65,7 +65,7 @@ defined( 'YITH_YWGC_SECRET_KEY' ) || define( 'YITH_YWGC_SECRET_KEY', 'GcGTnx2i0Q
 
 defined( 'YITH_YWGC_PLUGIN_NAME' ) || define( 'YITH_YWGC_PLUGIN_NAME', 'YITH WooCommerce Gift Cards' );
 defined( 'YITH_YWGC_INIT' ) || define( 'YITH_YWGC_INIT', plugin_basename( __FILE__ ) );
-defined( 'YITH_YWGC_VERSION' ) || define( 'YITH_YWGC_VERSION', '1.4.13' );
+defined( 'YITH_YWGC_VERSION' ) || define( 'YITH_YWGC_VERSION', '1.5.0' );
 defined( 'YITH_YWGC_DB_CURRENT_VERSION' ) || define( 'YITH_YWGC_DB_CURRENT_VERSION', '1.0.2' );
 defined( 'YITH_YWGC_FILE' ) || define( 'YITH_YWGC_FILE', __FILE__ );
 defined( 'YITH_YWGC_DIR' ) || define( 'YITH_YWGC_DIR', plugin_dir_path( __FILE__ ) );
@@ -109,10 +109,6 @@ if ( ! function_exists( 'yith_ywgc_premium_init' ) ) {
 
 		//  Star the plugin
 		yith_gift_cards_start();
-
-		//  Load third-party modules
-		yith_ywgc_load_third_party_modules();
-
 	}
 }
 add_action( 'yith_ywgc_premium_init', 'yith_ywgc_premium_init' );
@@ -129,23 +125,6 @@ if ( ! function_exists( 'YITH_YWGC' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_ywgc_load_third_party_modules' ) ) {
-	/**
-	 * Start the plugin main class, backend and frontend
-	 *
-	 * @author Lorenzo Giuffrida
-	 * @since  1.0.0
-	 */
-	function yith_ywgc_load_third_party_modules() {
-
-		if ( class_exists( 'WC_Aelia_CurrencySwitcher' ) ) {
-			require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-AeliaCS-module.php' );
-		}
-		if ( defined( 'YITH_WPV_PREMIUM' ) ) {
-			require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-multi-vendor-module.php' );
-		}
-	}
-}
 
 if ( ! function_exists( 'yith_gift_cards_start' ) ) {
 	/**
@@ -159,14 +138,10 @@ if ( ! function_exists( 'yith_gift_cards_start' ) ) {
 		$main = YITH_YWGC();
 
 		//  Init the backend
-		$backend           = YITH_WooCommerce_Gift_Cards_Backend_Premium::get_instance();
-		$main->admin       = $backend;
-		$main->admin->main = $main;
+		$main->admin = YITH_YITH_Backend_Premium::get_instance();
 
 		//  Init the frontend
-		$frontend             = YITH_WooCommerce_Gift_Cards_Frontend_Premium::get_instance();
-		$main->frontend       = $frontend;
-		$main->frontend->main = $main;
+		$main->frontend = YITH_YWGC_Frontend_Premium::get_instance();
 	}
 }
 
@@ -190,5 +165,5 @@ if ( ! function_exists( 'yith_ywgc_premium_install' ) ) {
 add_action( 'plugins_loaded', 'yith_ywgc_premium_install', 11 );
 
 //  start the scheduling of gift cards
-register_activation_hook( YITH_YWGC_FILE, 'YITH_WooCommerce_Gift_Cards_Backend_Premium::start_gift_cards_scheduling' );
-register_deactivation_hook( YITH_YWGC_FILE, 'YITH_WooCommerce_Gift_Cards_Backend_Premium::end_gift_cards_scheduling' );
+register_activation_hook( YITH_YWGC_FILE, 'YITH_YITH_Backend_Premium::start_gift_cards_scheduling' );
+register_deactivation_hook( YITH_YWGC_FILE, 'YITH_YITH_Backend_Premium::end_gift_cards_scheduling' );

@@ -28,10 +28,11 @@ return apply_filters( 'yith_wcqw_panel_payments_options', array(
 				'type' => 'select',
 				'title' => __( 'PayPal Service', 'yith-woocommerce-product-vendors' ),
 				'desc' => __( 'Choose the PayPal service to pay the commissions to vendors (the only option currently available is MassPay).', 'yith-woocommerce-product-vendors' ),
-				'options' => array(
-					'masspay' 	=> __( 'MassPay', 'yith-woocommerce-product-vendors' ),
-					//'standard' 	=> __( 'Standard', 'yith-woocommerce-product-vendors' ),
-				),
+                'options' => apply_filters( 'yith_wcmv_payments_gateway', array(
+                        'masspay' => __( 'MassPay', 'yith-woocommerce-product-vendors' ),
+                        //'standard' 	=> __( 'Standard', 'yith-woocommerce-product-vendors' ),
+                    )
+                ),
 				'default' => 'masspay'
 			),
 

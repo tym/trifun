@@ -138,10 +138,14 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             
             /* Save Post - Change the post status */
             add_action( 'yith_wcmv_save_post_product', array( $this, 'set_product_to_pending_review_after_edit' ), 10, 3 );
-
-//            add_action( 'pre_get_posts', array( $this, 'get_vendor_best_price' ) );
         }
 
+        /**
+         * Add input hidden with vendor id
+         *
+         * @param $col_name
+         * @param $post_id
+         */
         public function manage_product_vendor_tax_column( $col_name, $post_id ){
             if( $col_name == 'name' ){
                 $vendor = yith_get_vendor( $post_id, 'product' );
@@ -152,12 +156,22 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             }
         }
 
+        /**
+         * Quick Edit output render
+         *
+         * @param $column_name
+         * @param $post_type
+         */
         public function quick_edit_render( $column_name, $post_type ) {
             $enabled = apply_filters( 'yith_wcmv_quick_bulk_edit_enabled', true );
-            $vendor_col_name = 'taxonomy-' . YITH_Vendors()->get_taxonomy_name();
-            $vendor = yith_get_vendor( 'current', 'user' );
-            if ( $vendor->is_super_user() && $enabled && $post_type == 'product' && $column_name == $vendor_col_name ) {
-                yith_wcpv_get_template( 'bulk-set-vendor', array(), 'woocommerce/admin/products' );
+            if( $enabled && $post_type == 'product' ){
+                $vendor_col_name = 'taxonomy-' . YITH_Vendors()->get_taxonomy_name();
+                if ( $column_name == $vendor_col_name ) {
+                    $vendor = yith_get_vendor( 'current', 'user' );
+                    if( $vendor->is_super_user() ){
+                        yith_wcpv_get_template( 'bulk-set-vendor', array(), 'woocommerce/admin/products' );
+                    }
+                }
             }
         }
 
@@ -756,6 +770,7 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
                     $style  .= '#order_data .wc-customer-user, .widefat .column-order_title small.meta.email {display:none;}';
                     $script .= "jQuery('#order_data').find('.wc-customer-user').remove();";
                     $enqueue = true;
+                    add_action( 'woocommerce_admin_order_data_after_order_details', array( YITH_Vendors()->orders, 'hide_customer_info' ), 10, 1 );
                 }
 
                 if( 'yes' == get_option( 'yith_wpv_vendors_option_order_hide_payment', 'no' ) ){
@@ -771,15 +786,18 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             }
 
             elseif( YITH_Vendors()->orders->is_vendor_order_page() ){
-                $style = '';
+                $style = $script = '';
                 $enqueue = false;
+
                 if( 'yes' == get_option( 'yith_wpv_vendors_option_order_hide_customer', 'no' ) ){
-                    $style  .= '.widefat .column-order_title small.meta.email {display:none;}';
+                    $style  .= '.wc-customer-search {display:none;}';
+                    $script .= "jQuery('.wc-customer-search').remove();";
                     $enqueue = true;
                 }
 
                 if( $enqueue ){
                     wp_add_inline_style( 'yith-wc-product-vendors-admin', $style );
+                    ! empty( $script ) && wc_enqueue_js( $script );
                 }
             }
 
@@ -1397,7 +1415,6 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             }
         }
 
-
         /**
          * filter product reviews
          *
@@ -1912,8 +1929,6 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             return $check;
         }
 
-
-
         /**
          * Set product to pending status
          *
@@ -1938,6 +1953,9 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
             }
         }
 
+        /**
+         *
+         */
         public function allowed_comments(){
             if( ! current_user_can( 'moderate_comments' ) ){
                 $vendor = yith_get_vendor( 'current', 'user' );
@@ -1954,27 +1972,5 @@ if ( ! class_exists( 'YITH_Vendors_Admin_Premium' ) ) {
 
             }
         }
-
-
-//        function get_vendor_best_price( $query ){
-//            $vendor = yith_get_vendor( 'current', 'user' );
-//            if( $vendor->is_valid() && $vendor->has_limited_access() && 'yith_best_price' == $query->query[ 'post_type' ] ){
-//                global $wpdb;
-//                $best_price_ids = array();
-//                remove_filter( 'pre_get_posts', array( $this, 'get_vendor_best_price' ), 999999 );
-//                $vendor_products = $vendor->get_products( array( 'suppress_filters' => false ) );
-//                $vendor_products = implode( ',', $vendor_products );
-//                $sql = $wpdb->prepare( "
-//                    SELECT post_id
-//                    FROM {$wpdb->postmeta}
-//                    WHERE meta_key = %s
-//                    AND meta_value IN ({$vendor_products})", '_wcbg_product_id' );
-//                $best_price_ids = $wpdb->get_results( $sql, ARRAY_A );
-//                $best_price_ids = wp_list_pluck( $best_price_ids, 'post_id' );
-//
-//                $query->set( 'post__in', $best_price_ids );
-//                var_dump( $query );
-//            }
-//        }
     }
 }

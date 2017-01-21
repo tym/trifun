@@ -165,3 +165,54 @@ function add_role_to_body($classes) {
     }
     return $classes;
 }
+
+add_filter( 'wpmem_notify_addr', 'my_admin_email' );
+ 
+
+// Filter the Admin email so it sends to Preston 
+
+function my_admin_email( $email ) {
+ 
+    // single email example
+    $email = 'info@tri-fun.com';
+     
+    // multiple emails example
+    // $email = 'notify1@mydomain.com, notify2@mydomain.com';
+     
+    // take the default and append a second address to it example:
+    // $email = $email . ', notify2@mydomain.com';
+     
+    // return the result
+    return $email;
+}
+
+
+/**
+ *Reduce the strength requirement on the woocommerce password.
+ *
+ * Strength Settings
+ * 3 = Strong (default)
+ * 2 = Medium
+ * 1 = Weak
+ * 0 = Very Weak / Anything
+ */
+function reduce_woocommerce_min_strength_requirement( $strength ) {
+    return 1;
+}
+add_filter( 'woocommerce_min_password_strength', 'reduce_woocommerce_min_strength_requirement' );
+
+
+/* Remove strength meter */
+/*
+function wc_ninja_remove_password_strength() {
+	if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
+		wp_dequeue_script( 'wc-password-strength-meter' );
+	}
+}
+add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
+*/
+
+
+
+
+

@@ -33,6 +33,14 @@ if ( ! class_exists ( 'YITH_Orders' ) ) {
         protected static $_instance = null;
 
         /**
+         * Order Sync Enabled
+         *
+         * @var bool
+         * @since 1.4.0
+         */
+        public $sync_enabled = null;
+
+        /**
          * Constructor
          */
         public function __construct () {
@@ -85,9 +93,9 @@ if ( ! class_exists ( 'YITH_Orders' ) ) {
             /* Add shipping addresses to vendor email */
             add_filter( 'woocommerce_order_needs_shipping_address', array( $this, 'order_needs_shipping_address' ), 10, 3 );
 
-            $sync_enabled = 'yes' == get_option ( 'yith_wpv_vendors_option_order_synchronization', 'yes' ) ? true : false;
+            $this->sync_enabled = 'yes' == get_option ( 'yith_wpv_vendors_option_order_synchronization', 'yes' ) ? true : false;
 
-            if ( $sync_enabled ) {
+            if ( $this->sync_enabled ) {
                 /* SubOrder Sync */
                 add_action ( 'woocommerce_order_status_changed', array ( $this, 'suborder_status_synchronization' ), 30, 3 );
                 /* Order Meta Synchronization */
@@ -356,7 +364,7 @@ if ( ! class_exists ( 'YITH_Orders' ) ) {
                     $_cart = WC()->cart;
                     $line_item_taxes = array_keys ( $_cart->taxes + $_cart->shipping_taxes );
                     foreach ( $line_item_taxes as $tax_rate_id ) {
-                        if ( $_cart && $tax_rate_id && apply_filters ( 'woocommerce_cart_remove_taxes_zero_rate_id', 'zero-rated' ) !== $tax_rate_id ) {
+                        if ( $_cart && $tax_rate_id && ! empty( $order_taxes[ $tax_rate_id ] ) && ! empty( $order_shipping_tax_amount[ $tax_rate_id ]  ) && apply_filters ( 'woocommerce_cart_remove_taxes_zero_rate_id', 'zero-rated' ) !== $tax_rate_id ) {
                             $suborder->add_tax ( $tax_rate_id, $order_taxes[ $tax_rate_id ], $order_shipping_tax_amount[ $tax_rate_id ] );
                         }
                     }
@@ -385,10 +393,19 @@ if ( ! class_exists ( 'YITH_Orders' ) ) {
                 
                 // Let plugins add meta
                 do_action( 'yith_wcmv_checkout_update_order_meta', $suborder_id, $posted );
-                
             }
 
+            // update order version meta
 			update_post_meta( $suborder_id, '_order_version', YITH_Vendors()->version );
+
+            // update created_via meta
+            update_post_meta( $suborder_id, '_created_via', 'yith_wcmv_vendor_suborder' );
+
+            //Send Email if no sync enabled
+            if( ! $this->sync_enabled ){
+                WC()->mailer();
+                do_action( 'yith_wcmv_new_order_email', $suborder_id );
+            }
 
             return $suborder_id;
         }

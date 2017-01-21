@@ -4,13 +4,31 @@ Contributors: yithemes
 Tags: product vendors, vendors, vendor, multi store, multi vendor, multi seller, woocommerce product vendors, woocommerce multi vendor, commission rate, seller, shops, vendor shop, vendor system, woo vendors, wc vendors, e-commerce, yit, yith, yithemes
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.9.17
+Stable tag: 1.9.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Multi vendor e-commerce is a new idea of e-commerce platform that is becoming more and more popular in the web.
 
 == Changelog ==
+
+= 1.9.18 =
+
+* Added: Option to prevent vendors to resend order emails
+* Added: Suppot to YITH PayPal Adaptive Payments for WooCommerce
+* Added: create_via order meta for vendor suborder
+* Added: yith_wcmv_send_commission_email_on_manually_update to force commissions email for manual status change
+* Added: yith_wcmv_become_a_vendor_button_label hook to change "Become a vendor" button label
+* Added: Support to WooCommerce Points and Rewards plugin. No double points if a customer buy a vendor product
+* Tweak: Commissions table creation
+* Fixed: Vendor can't delete their uploaded images
+* Fixed: Remove customer search from orders section in vendor dashboard
+* Fixed: missing tax_id and tax_amount if a customer buy a no taxable products
+* Fixed: no new order email to vendor if order sync option are disabled
+* Fixed: Unable to sort commissions list table
+* Fixed: Suborder lost customer information if privacy option enabled
+* Fixed: Vendor quote lost customer information if privacy option enabled
+* Fixed: Empty Commissions list with version 1.9.17
 
 = 1.9.17 =
 

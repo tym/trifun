@@ -120,20 +120,20 @@ if ( ! class_exists( 'YITH_Multi_Vendor_Shortcodes' ) ) {
          * @author Andrea Grillo <andrea.grillo@yithemes.com>
          */
         public static function become_a_vendor( $sc_args = array() ) {
-            $user = wp_get_current_user();
+            $user   = wp_get_current_user();
             $vendor = yith_get_vendor( $user->ID, 'user' );
             ob_start();
-            if( ( ! $vendor->is_valid() && ( in_array( 'subscriber', $user->roles ) || in_array( 'customer', $user->roles ) ) ) || $vendor->is_super_user() ) {
+            if ( ( ! $vendor->is_valid() && ( in_array( 'subscriber', $user->roles ) || in_array( 'customer', $user->roles ) ) ) || $vendor->is_super_user() ) {
                 $args = array(
                     'is_vat_require'                  => YITH_Vendors()->is_vat_require(),
-                    'is_terms_and_conditions_require' => YITH_Vendors()->is_terms_and_conditions_require()
+                    'is_terms_and_conditions_require' => YITH_Vendors()->is_terms_and_conditions_require(),
+                    'become_a_vendor_label'           => apply_filters( 'yith_wcmv_become_a_vendor_button_label', esc_attr__( 'Become a vendor', 'yith-woocommerce-product-vendors' ) )
                 );
                 yith_wcpv_get_template( 'become-a-vendor', $args, 'shortcodes' );
-            }
-
-            else {
+            } else {
                 echo do_shortcode( '[woocommerce_my_account]' );
             }
+
             return ob_get_clean();
         }
     }

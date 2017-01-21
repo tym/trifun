@@ -67,8 +67,7 @@ if ( ! class_exists ( 'YWGC_Plugin_FW_Loader' ) ) {
         public function __construct () {
 
             $this->plugin_fw_loader ();
-
-            /**
+	        /**
              * Register actions and filters to be used for creating an entry on YIT Plugin menu
              */
             add_action ( 'admin_init', array ( $this, 'register_pointer' ) );
@@ -86,11 +85,11 @@ if ( ! class_exists ( 'YWGC_Plugin_FW_Loader' ) ) {
 
             //  Show plugin premium tab
             add_action ( 'yith_gift_cards_tab_premium', array ( $this, 'premium_tab' ) );
-
             /**
              * register plugin to licence/update system
              */
             $this->licence_activation ();
+
         }
 
         /**
@@ -132,7 +131,6 @@ if ( ! class_exists ( 'YWGC_Plugin_FW_Loader' ) ) {
             if ( ! defined ( 'YITH_YWGC_PREMIUM' ) ) {
                 $admin_tabs[ 'premium-landing' ] = __ ( 'Premium Version', 'yith-woocommerce-gift-cards' );
             }
-
             $args = array (
                 'create_menu_page' => true,
                 'parent_slug'      => '',
@@ -143,13 +141,13 @@ if ( ! class_exists ( 'YWGC_Plugin_FW_Loader' ) ) {
                 'parent_page'      => 'yit_plugin_panel',
                 'page'             => $this->_panel_page,
                 'admin-tabs'       => $admin_tabs,
-                'options-path'     => YITH_YWGC_DIR . '/plugin-options',
+                'options-path'     => YITH_YWGC_DIR . 'plugin-options',
             );
 
             /* === Fixed: not updated theme  === */
             if ( ! class_exists ( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 
-                require_once ( 'plugin-fw/lib/yit-plugin-panel-wc.php' );
+                require_once ( YITH_YWGC_DIR . 'plugin-fw/lib/yit-plugin-panel-wc.php' );
             }
 
             $this->_panel = new YIT_Plugin_Panel_WooCommerce( $args );

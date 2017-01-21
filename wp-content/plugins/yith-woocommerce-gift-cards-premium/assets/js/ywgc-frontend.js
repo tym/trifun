@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
     };
 
     var hide_on_gift_as_present = function () {
-        if ($('input[name="ywgc-as-present"]').length) {
+        if ($('input[name="ywgc-as-present-enabled"]').length) {
             $('.ywgc-generator').hide();
             show_gift_card_editor(false);
         }
@@ -32,13 +32,20 @@ jQuery(document).ready(function ($) {
 
     hide_on_gift_as_present();
 
-    $(document).on('click', '.ywgc-choose-design.ywgc-template', function (e) {
+    $(document).on('click', '.ywgc-choose-image.ywgc-choose-template', function (e) {
         init_plugin();
+    });
+
+    $(document).on('click', '.pp_content_container .ywgc-choose-preset', function (e) {
+        var id = $(this).data('design-id');
+        var design_url = $(this).data('design-url');
+        $('#ywgc-main-image').attr('src', design_url);
+        $(document).trigger('ywgc-picture-changed', ['template', id]);
+        $.prettyPhoto.close();
     });
 
     $(document).on('click', 'a.ywgc-show-category', function (e) {
 
-        e.preventDefault;
         var current_category = $(this).data("category-id");
 
         //  highlight the selected category
@@ -58,25 +65,13 @@ jQuery(document).ready(function ($) {
     });
 
     $(document).on('ywgc-picture-changed', function (event, type, id) {
-            switch (type) {
-                case 'default':
-                case 'custom':
-                case 'template':
-                    $('#ywgc-design-type').val(type);
-                    $('#ywgc-template-design').val(id);
-                    break;
-            }
+
+            $('#ywgc-design-type').val(type);
+            $('#ywgc-template-design').val(id);
         }
     );
 
-    $(document).on('click', 'button.ywgc-choose-template', function (e) {
 
-        var id = $(this).data('design-id');
-        var design_url = $(this).data('design-url');
-        $('#ywgc-main-image').attr('src', design_url);
-        $(document).trigger('ywgc-picture-changed', ['template', id]);
-        $.prettyPhoto.close();
-    });
 
     $(document).on('click', 'a.ywgc-show-giftcard', show_coupon_form);
 
@@ -102,14 +97,7 @@ jQuery(document).ready(function ($) {
     function show_gift_card_editor(val) {
         $('button.gift_card_add_to_cart_button').attr('disabled', !val);
 
-        if (val) {
-            //  Set the flag required on <input> elements
-            $('input[name="ywgc-recipient-email"]').add('input[name="ywgc-sender-name"]').prop("required", true);
-        }
-        else {
-            //  Unset the flag required on <input> elements
-            $('input[name="ywgc-recipient-email"]').add('input[name="ywgc-sender-name"]').prop("required", false);
-        }
+
     }
 
     function show_hide_add_to_cart_button() {
@@ -117,7 +105,7 @@ jQuery(document).ready(function ($) {
         var gift_this_product = $('#give-as-present');
 
         if (!gift_this_product.length) {
-            $('.gift-cards-list input.ywgc-manual-amount').addClass('hidden');
+            $('.gift-cards-list input.ywgc-manual-amount').addClass('ywgc-hidden');
             $('.ywgc-manual-amount-error').remove();
 
             var amount = 0;
@@ -126,7 +114,7 @@ jQuery(document).ready(function ($) {
                 var manual_amount_element = $('.gift-cards-list input.ywgc-manual-amount');
                 if (manual_amount_element.length) {
                     var manual_amount = manual_amount_element.val();
-                    manual_amount_element.removeClass('hidden');
+                    manual_amount_element.removeClass('ywgc-hidden');
 
                     var test_amount = new RegExp('^[1-9]\\d*(?:' + '\\' + ywgc_data.currency_format_decimal_sep + '\\d{1,2})?$', 'g')
 
@@ -185,15 +173,14 @@ jQuery(document).ready(function ($) {
     function add_recipient() {
         var last = $('div.ywgc-single-recipient').last();
         var new_div = '<div class="ywgc-single-recipient">\
-            <input type="email" name="ywgc-recipient-email[]" class="ywgc-recipient" required/> \
-            <a href="#" class="remove-recipient hide-if-alone">x</a> \
+            <input type="email" name="ywgc-recipient-email[]" class="ywgc-recipient"/> \
+            <a href="#" class="ywgc-remove-recipient hide-if-alone">x</a> \
             </div>';
 
         last.after(new_div);
 
-
         //  show the remove recipient links
-        $("a.remove-recipient").css('visibility', 'visible');
+        $("a.ywgc-remove-recipient").css('visibility', 'visible');
 
         $("div.gift_card_template_button input[name='quantity']").css("display", "none");
 
@@ -223,7 +210,7 @@ jQuery(document).ready(function ($) {
         add_recipient();
     });
 
-    $(document).on('click', 'a.remove-recipient', function (e) {
+    $(document).on('click', 'a.ywgc-remove-recipient', function (e) {
         e.preventDefault();
         remove_recipient($(this));
     });
@@ -251,7 +238,6 @@ jQuery(document).ready(function ($) {
         //  Reset style if previously a custom image was used
         $(".ywgc-main-image").css("background-color", "");
         $("div.gift-card-too-small").remove();
-
         $(document).trigger('ywgc-picture-changed', ['default']);
     });
 
@@ -303,34 +289,29 @@ jQuery(document).ready(function ($) {
 
         e.preventDefault();
 
-        $("div.ywgc-generator").append('<input type="hidden" name="gift_card_enabled" value="1">');
+        $("div.ywgc-generator").append('<input type="hidden" name="ywgc-as-present" value="1">');
         $("#give-as-present").css("visibility", "hidden");
         $("#ywgc-cancel-gift-card").css("visibility", "visible");
 
         $("div.ywgc-generator").css('display', 'inherit');
         $("div.ywgc-generator").css('visibility', 'visible');
-
-        $("input[name='ywgc-recipient-email[]']").prop('required', true);
-        $("input[name='ywgc-sender-name']").prop('required', true);
     });
 
     $(document).on('click', '#ywgc-cancel-gift-card', function (e) {
         e.preventDefault();
-        $("div.ywgc-generator input[name='gift_card_enabled']").remove();
+        $("div.ywgc-generator input[name='ywgc-as-present']").remove();
         $("#give-as-present").css("visibility", "visible");
         $("#ywgc-cancel-gift-card").css("visibility", "hidden");
 
         $("div.ywgc-generator").css('display', 'none');
-        $("input[name='ywgc-recipient-email[]']").prop('required', false);
-        $("input[name='ywgc-sender-name']").prop('required', false);
     });
 
-    $(document).on('change', '#ywgc-postdate', function (e) {
+    $(document).on('change', '#ywgc-postdated', function (e) {
         if ($(this).is(':checked')) {
-            $("#ywgc-delivery-date").removeClass("hidden");
+            $("#ywgc-delivery-date").removeClass("ywgc-hidden");
         }
         else {
-            $("#ywgc-delivery-date").addClass("hidden");
+            $("#ywgc-delivery-date").addClass("ywgc-hidden");
         }
     });
 
@@ -442,7 +423,7 @@ jQuery(document).ready(function ($) {
 
     $(document).on('click', 'form.gift-cards_form button.gift_card_add_to_cart_button', function (e) {
         $('div.gift-card-content-editor.step-content p.ywgc-filling-error').remove();
-        if ($('#ywgc-postdate').is(':checked') && !$.datepicker.parseDate('yy-mm-dd', $('#ywgc-delivery-date').val())) {
+        if ($('#ywgc-postdated').is(':checked') && !$.datepicker.parseDate('yy-mm-dd', $('#ywgc-delivery-date').val())) {
             $('div.gift-card-content-editor.step-content').append('<p class="ywgc-filling-error">' + ywgc_data.missing_scheduled_date + '</p>');
             e.preventDefault();
         }
@@ -560,4 +541,17 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    /**
+     * Integration with YITH Quick View and some third party themes
+     */
+    if (ywgc_data.enable_quick_view) {
+
+        $(document).on('qv_loader_stop yit_quick_view_loaded flatsome_quickview', function () {
+
+            show_hide_add_to_cart_button();
+
+            hide_on_gift_as_present();
+
+        });
+    }
 });

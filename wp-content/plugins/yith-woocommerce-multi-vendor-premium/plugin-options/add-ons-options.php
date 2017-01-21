@@ -581,5 +581,27 @@ return array(
 		'vendors_eu_energy_label_options_end' => array(
 			'type' => 'sectionend',
 		),
+        'vendors_paypal_adaptive_options' => array(
+            'type' => 'sectionstart',
+        ),
+
+        'vendors_paypal_adaptive_options_title' => array(
+            'title' => __( 'PayPal Adaptive Payments for WooCommerce', 'yith-woocommerce-product-vendors' ),
+            'type'  => 'title',
+            'desc'  => YITH_Vendors()->addons->get_plugin_landing_uri( 'paypal-adaptive', 'display' ),
+        ),
+
+        'vendors_paypal_adaptive_options_mode' => array(
+            'title'             => __( 'PayPal Adaptive Payments for vendors', 'yith-woocommerce-product-vendors' ),
+            'type'              => 'yith_premium_addons',
+            'desc'              => YITH_Vendors()->addons->get_option_description( 'paypal-adaptive' ),
+            'custom_attributes' => YITH_Vendors()->addons->has_plugin( 'paypal-adaptive' ) ? false : array(
+                'disabled' => 'disabled',
+            ),
+        ),
+
+        'vendors_paypal_adaptive_options_end' => array(
+            'type' => 'sectionend',
+        ),
 	),
 );

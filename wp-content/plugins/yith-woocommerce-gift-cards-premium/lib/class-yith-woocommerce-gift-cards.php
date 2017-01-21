@@ -15,12 +15,12 @@ if ( ! class_exists( 'YITH_WooCommerce_Gift_Cards' ) ) {
 	 */
 	class YITH_WooCommerce_Gift_Cards {
 		/**
-		 * @var YITH_WooCommerce_Gift_Cards_Backend|YITH_WooCommerce_Gift_Cards_Backend_Premium The instance for backend features and methods
+		 * @var YITH_YWGC_Backend|YITH_YITH_Backend_Premium The instance for backend features and methods
 		 */
 		public $admin;
 
 		/**
-		 * @var YITH_WooCommerce_Gift_Cards_Frontend|YITH_WooCommerce_Gift_Cards_Frontend_Premium instance for frontend features and methods
+		 * @var YITH_YITH_Frontend|YITH_YWGC_Frontend_Premium instance for frontend features and methods
 		 */
 		public $frontend;
 
@@ -56,15 +56,44 @@ if ( ! class_exists( 'YITH_WooCommerce_Gift_Cards' ) ) {
 
 			$this->includes();
 			$this->init_hooks();
+
+			/**
+			 * Store if the plugin version is prior than 1.5.0 that is threshold of much plugin changes
+			 */
+
+		}
+
+		public function prior_than_150() {
+			return version_compare( YITH_YWGC_VERSION, '1.5.0', '<' );
 		}
 
 		public function includes() {
 			require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-product.php' );
+			require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-cart-checkout.php' );
 			require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-emails.php' );
 			require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-gift-cards-table.php' );
+
 			if ( 'yes' === get_option( 'ywgc_enable_shipping_discount', 'no' ) ) {
 				require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-shipping.php' );
 			}
+
+			/**
+			 * Include third-party integration classes
+			 */
+
+			//  YITH Dynamic Pricing
+			defined( 'YITH_YWDPD_VERSION' ) && require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-dynamic-pricing.php' );
+
+			//  YITH Points and Rewards
+			defined( 'YITH_YWPAR_VERSION' ) && require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-points-and-rewards.php' );
+
+			//  YITH Multi Vendor
+			defined( 'YITH_WPV_PREMIUM' ) && require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-multi-vendor-module.php' );
+
+			//  Aelia Currency Switcher
+			class_exists( 'WC_Aelia_CurrencySwitcher' ) && require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-AeliaCS-module.php' );
+
+			defined( 'YITH_WCQV_PREMIUM' ) && require_once( YITH_YWGC_DIR . 'lib/third-party/class-ywgc-general-integrations.php' );
 		}
 
 		public function init_hooks() {
@@ -80,6 +109,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Gift_Cards' ) ) {
 
 			add_filter( 'yith_plugin_status_sections', array( $this, 'set_plugin_status' ) );
 		}
+
 
 		/**
 		 * Hide the temporary gift card product from being shown on shop page
@@ -150,8 +180,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Gift_Cards' ) ) {
 				$posts = get_posts( $args );
 
 				foreach ( $posts as $post ) {
-					$args      = array( 'ID' => $post->ID );
-					$gift_card = new YWGC_Gift_Card_Premium( $args );
+					$gift_card = new YWGC_Gift_Card_Premium( array( 'ID' => $post->ID ) );
 
 					if ( ! $gift_card->exists() ) {
 						continue;
@@ -278,3 +307,4 @@ if ( ! class_exists( 'YITH_WooCommerce_Gift_Cards' ) ) {
 		}
 	}
 }
+

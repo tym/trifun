@@ -60,8 +60,8 @@ if ( !class_exists( 'YITH_Vendors_Premium' ) ) {
             add_action( 'woocommerce_init', array( $this, 'load_wc_mailer' ) );
 
             /* Load modules */
-            add_action( 'admin_menu', array( $this, 'load_modules' ), 5 );
-            add_action( 'wp_loaded',  array( $this, 'load_vacation_modules' ) );
+            add_action( 'admin_menu', array( $this, 'load_admin_modules' ), 5 );
+            add_action( 'wp_loaded',  array( $this, 'load_common_modules' ) );
 
             parent::__construct();
 
@@ -131,17 +131,12 @@ if ( !class_exists( 'YITH_Vendors_Premium' ) ) {
          * @since  1.9
          * @author Andrea Grillo <andrea.grillo@yithemes.com>
          */
-        public function load_modules(){
+        public function load_admin_modules(){
             $require = array();
 
             //Coupon Module
             if ( 'yes' == get_option( 'yith_wpv_vendors_option_coupon_management', 'no' ) ) {
                 $require['admin'][] = 'includes/modules/module.yith-vendor-coupons.php';
-            }
-
-            //Seller Vacation Module
-            if ( 'yes' == get_option( 'yith_wpv_vendors_option_seller_vacation_management', 'no' ) ) {
-                $require['common'][] = 'includes/modules/module.yith-vendor-vacation.php';
             }
 
             //Reqeust a quote Module
@@ -172,27 +167,32 @@ if ( !class_exists( 'YITH_Vendors_Premium' ) ) {
                 $require['admin'][] = 'includes/modules/module.yith-wc-customer-order-export-support.php';
             }
 
-            // SMS Notifications Module
-            if( function_exists( 'YITH_WSN' ) ){
-                $require['common'][] = 'includes/modules/module.yith-sms-notifications.php';
-            }
-
             ! empty( $require ) && $this->_require( $require );
         }
 
         /**
-         * Load vacation plugin modules
+         * Load common plugin modules
          *
          * @return void
          * @since  1.9
          * @author Andrea Grillo <andrea.grillo@yithemes.com>
          */
-        public function load_vacation_modules(){
+        public function load_common_modules(){
             $require = array();
 
             //Seller Vacation Module
             if ( 'yes' == get_option( 'yith_wpv_vendors_option_seller_vacation_management', 'no' ) ) {
                 $require['common'][] = 'includes/modules/module.yith-vendor-vacation.php';
+            }
+
+            // SMS Notifications Module
+            if( function_exists( 'YITH_WSN' ) ){
+                $require['common'][] = 'includes/modules/module.yith-sms-notifications.php';
+            }
+            
+            // WooCommerce Points and Rewards
+            if( class_exists( 'WC_Points_Rewards' ) ){
+                $require['common'][] = 'includes/modules/module.yith-wc-points-and-rewards.php';
             }
 
             ! empty( $require ) && $this->_require( $require );

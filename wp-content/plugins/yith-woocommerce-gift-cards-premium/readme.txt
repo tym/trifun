@@ -4,11 +4,25 @@ Contributors: yithemes
 Tags: gift card, gift cards, coupon, gift, discount
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.4.13
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
+
+= Version 1.5.0 - Released: Dec 06, 2016 =
+
+* Added: gift cards can be create manually from back end
+* Added: gift cards balance can be managed from back end
+* Added: gift cards details can be edited from back end
+* Added: create your own gift card template overwriting the plugin templates
+* Added: allow inventory for gift card products
+* Added: allow 'sold individually' for gift cards
+* Added: choose if in digital gift cards, the recipient email is mandatory.
+* Added: recipient name in gift card product template
+* Updated: gift card code are generated as soon as possible after the payment of the order(in 'processing' or 'completed' order status)
+* Updated: the sender name is no more mandatory when a digital gift cards is purchased
+* Fixed: various issues with Aelia Currency Switcher
 
 = Version 1.4.13 - Released: Nov 18, 2016 =
 

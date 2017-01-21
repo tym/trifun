@@ -2,10 +2,10 @@
 
 require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards.php' );
 require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards-premium.php' );
-require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards-backend.php' );
-require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards-backend-premium.php' );
-require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards-frontend.php' );
-require_once( YITH_YWGC_DIR . 'lib/class-yith-woocommerce-gift-cards-frontend-premium.php' );
+require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-backend.php' );
+require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-backend-premium.php' );
+require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-frontend.php' );
+require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-frontend-premium.php' );
 
 require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-gift-card.php' );
 require_once( YITH_YWGC_DIR . 'lib/class-yith-ywgc-gift-card-premium.php' );
@@ -63,6 +63,7 @@ defined( 'YWGC_TABLE_COLUMN_BALANCE' ) || define( 'YWGC_TABLE_COLUMN_BALANCE', '
 defined( 'YWGC_TABLE_COLUMN_DEST_ORDERS' ) || define( 'YWGC_TABLE_COLUMN_DEST_ORDERS', 'dest_orders' );
 defined( 'YWGC_TABLE_COLUMN_DEST_ORDERS_TOTAL' ) || define( 'YWGC_TABLE_COLUMN_DEST_ORDERS_TOTAL', 'dest_order_total' );
 defined( 'YWGC_TABLE_COLUMN_ACTIONS' ) || define( 'YWGC_TABLE_COLUMN_ACTIONS', 'gift_card_actions' );
+
 
 if ( ! function_exists( 'ywgc_required' ) ) {
 	/**

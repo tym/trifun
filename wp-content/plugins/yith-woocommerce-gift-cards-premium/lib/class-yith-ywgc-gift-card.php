@@ -70,70 +70,32 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Card' ) ) {
 		 */
 		public function __construct( $args = array() ) {
 
-			$defaults = array(
-				'ID'               => 0,
-				'gift_card_number' => '',
-				'product_id'       => 0,
-				'order_id'         => 0,
-				'amount'           => 0.00,
-				'amount_tax'       => 0.00,
-				'balance'          => 0.00,
-				'balance_tax'      => 0.00,
-				'status'           => GIFT_CARD_STATUS_ENABLED,
-			);
-
-			$args = wp_parse_args( $args, $defaults );
-
 			/**
 			 *  if $args['ID'] is set, retrieve the post with the same ID
 			 *  if $args['gift_card_number'] is set, retrieve the post with the same post_title
 			 */
-			if ( $args['ID'] ) {
+			if ( isset( $args['ID'] ) ) {
 				$post = get_post( $args['ID'] );
-			} elseif ( ! empty( $args['gift_card_number'] ) ) {
+			} elseif ( isset( $args['gift_card_number'] ) ) {
 				$post = get_page_by_title( $args['gift_card_number'], OBJECT, YWGC_CUSTOM_POST_TYPE_NAME );
 			}
 
+			//  Load post date, if they exist
 			if ( isset( $post ) ) {
 
-				$args = array(
-					'ID'               => $post->ID,
-					'gift_card_number' => $post->post_title,
-					'product_id'       => $post->post_parent,
-					'order_id'         => get_post_meta( $post->ID, YWGC_META_GIFT_CARD_ORDER_ID, true ),
-					'amount'           => get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT, true ),
-					'amount_tax'       => get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_TAX, true ),
-					'balance'          => get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE, true ),
-					'balance_tax'      => get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE_TAX, true ),
-					'status'           => $post->post_status,
-				);
+				$this->ID               = $post->ID;
+				$this->gift_card_number = $post->post_title;
+				$this->product_id       = $post->post_parent;
+				$this->order_id         = get_post_meta( $post->ID, YWGC_META_GIFT_CARD_ORDER_ID, true );
+				$this->amount           = get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT, true );
+				$this->amount_tax       = get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_TAX, true );
+				$this->balance          = get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE, true );
+				$this->balance_tax      = get_post_meta( $post->ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE_TAX, true );
+				$this->status           = $post->post_status;
 			}
 
-			//  Set the object fields
-			$this->ID               = $args['ID'];
-			$this->gift_card_number = $args['gift_card_number'];
-			$this->product_id       = $args['product_id'];
-			$this->order_id         = $args['order_id'];
-			$this->amount           = $args['amount'];
-			$this->amount_tax       = $args['amount_tax'];
-			$this->balance          = $args['balance'];
-			$this->balance_tax      = $args['balance_tax'];
-			$this->status           = $args['status'];
 		}
 
-		/**
-		 * Give a mixed arguments, extract an array with the arguments to be used for creating a gift card
-		 *
-		 * @param int|string|array $args
-		 *
-		 * @return array
-		 * @author Lorenzo Giuffrida
-		 * @since  1.0.0
-		 */
-		private function get_array_args( $args ) {
-
-
-		}
 
 		/**
 		 * Set the initial amount for the current gift card. Can't be updated if previously set.
@@ -176,6 +138,12 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Card' ) ) {
 			}
 
 			return $_amount;
+		}
+
+		public function save_data() {
+			update_post_meta( $this->ID, YWGC_META_GIFT_CARD_ORDER_ID, $this->order_id );
+			$this->save_balance();
+			$this->save_amount();
 		}
 
 		/**
@@ -257,16 +225,15 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Card' ) ) {
 		/**
 		 * Deduct an amount from the gift card
 		 *
-		 * @param float $deduct_amount     the amount to be deducted from current gift card balance
-		 * @param float $deduct_amount_tax the tax amount to be deducted from current gift card balance
+		 * @param float $amount     the amount to be deducted from current gift card balance
+		 * @param float $tax_amount the tax amount to be deducted from current gift card balance
 		 */
-		public function deduct_amount( $deduct_amount, $deduct_amount_tax = 0.00 ) {
+		public function deduct_amount( $amount, $tax_amount = 0.00 ) {
 
-			$new_amount     = $this->get_balance() - $deduct_amount;
-			$new_amount_tax = $this->get_balance( true ) - $this->get_balance() - $deduct_amount_tax;
+			$new_amount     = max( 0, $this->get_balance() - $amount );
+			$new_amount_tax = max( 0, $this->get_balance( true ) - $this->get_balance() - $tax_amount );
 
-			if ( $new_amount < 0 ) {
-				$new_amount     = 0.00;
+			if ( $new_amount == 0 ) {
 				$new_amount_tax = 0.00;
 			}
 
@@ -387,7 +354,7 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Card' ) ) {
 		 * Save the current object
 		 */
 		public function save() {
-			// Create post object
+			// Create post object args
 			$args = array(
 				'post_title'  => $this->gift_card_number,
 				'post_status' => $this->status,
@@ -404,11 +371,8 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Card' ) ) {
 				$this->ID   = wp_update_post( $args );
 			}
 
-			//  Save Gift Card postmeta
-			$this->save_amount();
-			$this->save_balance();
-
-			update_post_meta( $this->ID, YWGC_META_GIFT_CARD_ORDER_ID, $this->order_id );
+			//  Save Gift Card meta
+			$this->save_data();
 
 			return $this->ID;
 		}

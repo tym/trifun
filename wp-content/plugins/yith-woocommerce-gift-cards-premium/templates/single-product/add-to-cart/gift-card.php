@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 
 	<?php do_action( 'yith_gift_cards_template_after_form_opening' ); ?>
 
-	<?php if ( ! $product->is_purchasable()  ) : ?>
+	<?php if ( ! $product->is_purchasable() ) : ?>
 		<p class="gift-card-not-valid">
 			<?php _e( "This product cannot be purchased", 'yith-woocommerce-gift-cards' ); ?>
 		</p>
@@ -62,15 +62,10 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 			 * yith_gift_cards_template_after_gift_card Hook
 			 */
 			do_action( 'yith_gift_cards_template_after_gift_card' );
-
-
 			?>
 		</div>
 
-
-		<?php
-		do_action( 'yith_gift_cards_template_after_add_to_cart_button' );
-		?>
+		<?php do_action( 'yith_gift_cards_template_after_add_to_cart_button' ); ?>
 
 	<?php endif; ?>
 

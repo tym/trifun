@@ -43,7 +43,7 @@ if ( ! class_exists( "YITH_YWGC_Email_Send_Gift_Card" ) ) {
 			$this->template_html  = 'emails/send-gift-card.php';
 			$this->template_plain = 'emails/plain/send-gift-card.php';
 
-			$this->introductory_text = __( 'You have received this gift card from <b>{sender}</b>, use it on our online shop.', 'yith-woocommerce-gift-cards' );
+			$this->introductory_text = __( 'Hi {recipient_name}, you have received this gift card from {sender}, use it on our online shop.', 'yith-woocommerce-gift-cards' );
 
 			// Trigger on specific action call
 			add_action( 'ywgc-email-send-gift-card_notification',
@@ -103,8 +103,8 @@ if ( ! class_exists( "YITH_YWGC_Email_Send_Gift_Card" ) ) {
 					}
 
 				} else if ( YWGC_CUSTOM_POST_TYPE_NAME == $post_type ) {
-					$args   = array( 'ID' => $object );
-					$object = new YWGC_Gift_Card_Premium( $args );
+
+					$object = new YWGC_Gift_Card_Premium( array( 'ID' => $object ) );
 				} else {
 					return false;
 				}
@@ -121,11 +121,19 @@ if ( ! class_exists( "YITH_YWGC_Email_Send_Gift_Card" ) ) {
 			$this->object    = $object;
 			$this->recipient = $object->recipient;
 
-			$this->introductory_text = $this->get_option( 'introductory_text', __( 'You have received this gift card from <b>{sender}</b>, use it on our online shop.', 'yith-woocommerce-gift-cards' ) );
+			$this->introductory_text = $this->get_option( 'introductory_text', __( 'Hi {recipient_name}, you have received this gift card from {sender}, use it on our online shop.', 'yith-woocommerce-gift-cards' ) );
+			$recipient_name          = $this->object->recipient_name ? $this->object->recipient_name : '';
+			$sender_name             = $this->object->sender_name ? $this->object->sender_name : __( 'a friend', 'yith-woocommerce-gift-cards' );
 
 			$this->introductory_text = str_replace(
-				array( "{sender}" ),
-				array( $this->object->sender ),
+				array(
+					"{sender}",
+					"{recipient_name}"
+				),
+				array(
+					$sender_name,
+					$recipient_name
+				),
 				$this->introductory_text
 			);
 

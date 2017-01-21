@@ -44,8 +44,8 @@ if ( $posts ) : ?>
 
 		<tbody>
 		<?php foreach ( $posts as $single_post ) :
-			$args = array( 'ID' => $single_post->ID );
-			$gift_card = new YWGC_Gift_Card_Premium( $args );
+
+			$gift_card = new YWGC_Gift_Card_Premium( array( 'ID' => $single_post->ID ) );
 
 			if ( ! $gift_card->exists() ) {
 				continue;
