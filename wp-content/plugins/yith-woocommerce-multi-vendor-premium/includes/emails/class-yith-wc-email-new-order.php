@@ -45,9 +45,6 @@ class YITH_WC_Email_New_Order extends WC_Email {
         add_action( 'woocommerce_order_status_failed_to_completed_notification', array( $this, 'trigger' ) );
         add_action( 'woocommerce_order_status_failed_to_on-hold_notification', array( $this, 'trigger' ) );
 
-	    //Force to send email if no Syn option enabled
-	    add_action( 'yith_wcmv_new_order_email', array( $this, 'trigger' ) );
-
         // Call parent constructor
 		parent::__construct();
 
@@ -61,8 +58,8 @@ class YITH_WC_Email_New_Order extends WC_Email {
 	 * @return void
 	 */
 	function trigger( $order_id ) {
-		
-		if ( ! $this->is_enabled() || empty( $order_id ) || ! wp_get_post_parent_id( $order_id ) ) {
+
+        if ( ! $this->is_enabled() || empty( $order_id ) || ! wp_get_post_parent_id( $order_id ) ) {
             return false;
         }
 

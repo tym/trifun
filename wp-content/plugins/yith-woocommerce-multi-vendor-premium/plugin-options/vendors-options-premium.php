@@ -180,14 +180,6 @@ return array(
                 'default' => 'no'
             ),
 
-            'vendors_order_hide_emails'     => array(
-                'title'   => __( 'Prevent vendors to resend order emails', 'yith-woocommerce-product-vendors' ),
-                'type'    => 'checkbox',
-                'desc'    => __( "It prevents the vendors to resend the emails related to the orders to customers.", 'yith-woocommerce-product-vendors' ),
-                'id'      => 'yith_wpv_vendors_option_order_prevent_resend_email',
-                'default' => 'no'
-            ),
-
             'vendors_order_end'               => array(
                 'type' => 'sectionend',
             ),

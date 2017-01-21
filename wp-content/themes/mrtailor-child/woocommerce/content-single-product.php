@@ -89,7 +89,6 @@
 				<div class="prod-price"><?php do_action( 'woocommerce_single_product_summary_single_price' ); ?></div>
 				<div class="add"><?php do_action( 'woocommerce_single_product_summary_single_add_to_cart' ); ?></div>
 				<p class="the-button"><a class="buy-now" href="<?php echo get_site_url(); ?>/<?php echo get_field('buy_now_button'); ?>">Buy Membership Now!</a></p>
-				<p class="message"><em>*Multiple memberships purchased together will be listed on one membership card. If you prefer separate membership cards for each member, they must be purchased in separate transactions (once you create your account you can use the same account for each of the separate transactions).</em></p>
 			</div>
 			
 		</div>

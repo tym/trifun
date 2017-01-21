@@ -378,8 +378,7 @@ if ( ! class_exists( 'YITH_Vendors' ) ) {
 				"upload_files"              => true,
 				"manage_bookings"           => true,
 				"manage_vendor_store"       => true,
-				"edit_posts"                => true,
-				"delete_posts"              => true
+				"edit_posts"                => true
 			);
 
 			 /* === Orders === */

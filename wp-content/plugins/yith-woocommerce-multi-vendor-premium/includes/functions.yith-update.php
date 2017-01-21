@@ -1,23 +1,6 @@
 <?php
 
 /**
- * Database Table Check
- */
-
-//Check if Commission tables are created
-function yith_vendors_check_commissions_table() {
-    $create_commissions_table = get_option( 'yith_product_vendors_commissions_table_created' );
-    if ( ! $create_commissions_table ) {
-        /**
-         * Create new Commissions DB table
-         */
-        YITH_Commissions::create_commissions_table();
-    }
-}
-
-add_action( 'admin_init', 'yith_vendors_check_commissions_table' );
-
-/**
  * Database Version Update
  */
 
@@ -143,7 +126,6 @@ add_action( 'admin_init', 'yith_vendors_update_db_1_0_6' );
 /**
  * Plugin Version Update
  */
-
 //Add support to YITH Product Vendors plugin version 1.8.1
 function yith_vendors_plugin_update_1_8_1() {
     $plugin_version = get_option( 'yith_wcmv_version', '1.0.0' );

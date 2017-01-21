@@ -62,8 +62,9 @@ if ( ! class_exists ( "YITH_YWGC_Email_Notify_Customer" ) ) {
         public function trigger ( $gift_card ) {
 
             if ( is_numeric ( $gift_card ) ) {
+                $args = array( 'ID' => $gift_card );
 
-                $gift_card = new YWGC_Gift_Card_Premium( array( 'ID' => $gift_card ) );
+                $gift_card = new YWGC_Gift_Card_Premium( $args );
             }
 
             if ( ! ( $gift_card instanceof YWGC_Gift_Card_Premium ) ) {
@@ -81,7 +82,7 @@ if ( ! class_exists ( "YITH_YWGC_Email_Notify_Customer" ) ) {
 
             $this->introductory_text = str_replace (
                 array ( "{sender}", "{recipient_email}" ),
-                array ( $this->object->sender_name, $this->object->recipient ),
+                array ( $this->object->sender, $this->object->recipient ),
                 $this->introductory_text
             );
 
