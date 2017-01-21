@@ -102,14 +102,6 @@ if ( ! class_exists( 'YITH_Commissions_List_Table' ) ) {
 	            'order'   => 'DESC',
             );
 
-            if( ! empty( $_GET['orderby'] ) ){
-                $args['ordeby'] = $_GET['orderby'];
-            }
-
-            if( ! empty( $_GET['order'] ) ){
-                $args['order'] = $_GET['order'];
-            }
-
 	        // merge Unpaid with Processing
 	        if ( 'unpaid' == $args['status'] ) {
 		        $args['status'] = array( 'unpaid', 'processing' );

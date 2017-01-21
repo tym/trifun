@@ -77,8 +77,9 @@
             <div class="site-tools">
 
 	            <ul>
-					
+
 		            <li id="mobile-menu" class="mobile-menu-button"><a href="javascript:void(0)"><span class="mobile-menu-text"><?php _e( 'MENU', 'mr_tailor' )?></span><i class="fa fa-bars"></i></a></li>
+
                     <?php if (class_exists('YITH_WCWL')) : ?>
                     <?php if ( (isset($mr_tailor_theme_options['main_header_wishlist'])) && (trim($mr_tailor_theme_options['main_header_wishlist']) == "1" ) ) : ?>
                     <li class="wishlist-button">

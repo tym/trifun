@@ -51,7 +51,7 @@
     display: inline-block;
 }
 
-.ywgc-manual-amount.ywgc-hidden {
+.ywgc-manual-amount.hidden {
     display: none;
 }
 
@@ -60,7 +60,7 @@
     padding-top: 10px;
 }
 
-.ywgc-generator input.ywgc-choose-image {
+.ywgc-generator input.ywgc-choose-design {
     background-color: #a7a7a7;
     color: white;
     text-transform: uppercase;
@@ -120,18 +120,18 @@
     max-height: 100px;
 }
 
-a.add-recipient, a.ywgc-remove-recipient {
+a.add-recipient, a.remove-recipient {
     display: block;
     text-decoration: none;
     border: none;
     color: green;
 }
 
-a.ywgc-remove-recipient {
+a.remove-recipient {
     color: red;
 }
 
-.ywgc-hidden {
+.hidden {
     display: none;
 }
 
@@ -247,7 +247,7 @@ a.ywgc-remove-recipient {
     display: inline-block;
 }
 
-.ywgc-single-recipient a.ywgc-remove-recipient {
+.ywgc-single-recipient a.remove-recipient {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -259,7 +259,6 @@ a.ywgc-remove-recipient {
 }
 
 .ywgc-sender-name,
-.ywgc-recipient-name,
 .ywgc-message {
     margin-top: 15px;
 }
@@ -279,7 +278,7 @@ button#give-as-present {
     margin: 10px 0;
 }
 
-.ywgc-postdated {
+.ywgc-postdate {
     margin-bottom: 15px;
 }
 
@@ -300,7 +299,7 @@ button#give-as-present {
     margin: 0;
 }
 
-.ywgc-generator .ywgc-hidden {
+.ywgc-generator .hidden {
     display: none;
 }
 
@@ -404,10 +403,4 @@ a.ywgc-category-selected {
 
 .ywgc-manual-amount-error {
     font-size: smaller;
-}
-
-.ywgc-empty-recipient-note {
-    display: inline-block;
-    font-size: smaller;
-    color: grey;
 }

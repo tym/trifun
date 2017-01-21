@@ -61,7 +61,7 @@ $vat                = ! empty( $_POST['vendor-vat'] )               ? sanitize_t
 
         <p class="form-row">
             <?php wp_nonce_field( 'woocommerce-register' ); ?>
-            <input type="button" id="yith-become-a-vendor-submit" class="<?php apply_filters( 'yith_wpv_become_a_vendor_button_class', 'button' ) ?>" name="register" value="<?php echo $become_a_vendor_label; ?>" />
+            <input type="button" id="yith-become-a-vendor-submit" class="<?php apply_filters( 'yith_wpv_become_a_vendor_button_class', 'button' ) ?>" name="register" value="<?php esc_attr_e( 'Become a vendor', 'yith-woocommerce-product-vendors' ); ?>" />
             <input type="hidden" id="yith-vendor-register" name="vendor-register" value="1">
             <input type="hidden" id="vendor-antispam" name="vendor-antispam" value="">
         </p>

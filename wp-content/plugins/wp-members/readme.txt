@@ -3,7 +3,7 @@ Contributors: cbutlerjr
 Tags: access, authentication, content, login, member, membership, password, protect, register, registration, restriction, subscriber
 Requires at least: 3.6
 Tested up to: 4.6.1
-Stable tag: 3.1.6.2
+Stable tag: 3.1.6.1
 License: GPLv2
 
 WP-Members&trade; is a free membership management framework for WordPress&reg; that restricts content to registered users.
@@ -112,7 +112,6 @@ Premium priority support is available at the plugin's site [RocketGeek.com](http
 
 == Upgrade Notice ==
 
-WP-Members 3.1.6.2 applies properties to the default stylesheets for the remember me checkbox label.
 WP-Members 3.1.6 is primarily a settings update. See changelog for important details. Minimum WP version is 3.6.
 
 == Screenshots ==
@@ -135,10 +134,6 @@ WP-Members 3.1.6 is primarily a settings update. See changelog for important det
 
 
 == Changelog ==
-
-= 3.1.6.2 =
-
-* Applies style properties for the remember me checkbox label to the default stylesheets. The label tag was added to this text in 3.1.6 (see below).
 
 = 3.1.6.1 =
 
@@ -384,4 +379,7 @@ If you have any custom functions hooked to filters and actions that call any fil
 * Registration clear form button defaults to false.
 * Removed wp_set_auth_cookie from login function; it is already done as part of wp_signon.
 * Post meta box title filter is now for all post types wpmem_admin_{post type}_meta_title.
-* New                                                                                                                                                                                                                                                                              
+* New filter for Really Simple Captcha folder location: wpmem_rs_captcha_folder.
+* New shortcodes [wpmem_form] added.
+* Shortcode dropdown selector added to tinymce toolbar in Post/Page editor.
+* Added redirect_to as a function argument if calling wpmem_logout() directly.

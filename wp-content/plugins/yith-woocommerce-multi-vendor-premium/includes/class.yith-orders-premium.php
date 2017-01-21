@@ -197,37 +197,9 @@ if ( ! class_exists ( 'YITH_Order_Premium' ) ) {
          * @return array
          */
         public function resend_order_emails_available( $emails ){
-            /* Add vendor email to available wc emails */
             $emails[] = 'new_order_to_vendor';
             $emails[] = 'cancelled_order';
-
-            $vendor = yith_get_vendor( 'current', 'user' );
-            if( $vendor->is_valid() && $vendor->has_limited_access() ){
-                $prevent_resend_email = 'no' == get_option( 'yith_wpv_vendors_option_order_prevent_resend_email', 'no' ) ? false : true;
-                if( $prevent_resend_email ){
-                    $emails = array();
-                }
-            }
             return $emails;
-        }
-
-        /**
-         * Add input hidden with customer id
-         *
-         * @param $order WC_Order object
-         *
-         * @since  1.9.18
-         * @author Andrea Grillo <andrea.grillo@yithemes.com>
-         * @return void
-         */
-        public function hide_customer_info( $order ){
-            if( $order instanceof WC_Order){
-                $user_id     = absint( $order->customer_user );
-                ob_start(); ?>
-                <input type="hidden" name="customer_user" value="<?php echo $user_id; ?>" />
-                <?php
-                echo ob_get_clean();
-            }
         }
     }
 }

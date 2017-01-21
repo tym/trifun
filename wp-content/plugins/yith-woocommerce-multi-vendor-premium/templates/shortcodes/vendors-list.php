@@ -34,7 +34,7 @@ extract( $sc_args );
         }
 
         ?>
-        <li class="vendor-item <?php echo $vendor->slug; ?>">
+        <li class="vendor-item">
             <h3>
                 <a href="<?php echo $vendor->get_url() ?>" title="<?php _e( 'Store page', 'yith-woocommerce-product-vendors' ); ?>" class="store-name" >
                     <?php echo $vendor->name; ?>

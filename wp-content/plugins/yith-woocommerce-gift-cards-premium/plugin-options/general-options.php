@@ -54,6 +54,13 @@ $general_options = array(
 			'desc'    => __( 'Let your customer to set a delivery date for the gift cards purchased', 'yith-woocommerce-gift-cards' ),
 			'default' => 'no',
 		),
+		'ywgc_sender_mandatory'         => array(
+			'name'    => __( 'Sender is mandatory', 'yith-woocommerce-gift-cards' ),
+			'type'    => 'checkbox',
+			'id'      => 'ywgc_sender_mandatory',
+			'desc'    => __( 'Choose if the sender name is mandatory for digital gift cards.', 'yith-woocommerce-gift-cards' ),
+			'default' => 'yes',
+		),
 		'ywgc_recipient_mandatory'      => array(
 			'name'    => __( 'Recipient email is mandatory', 'yith-woocommerce-gift-cards' ),
 			'type'    => 'checkbox',
@@ -133,6 +140,13 @@ $general_options = array(
 			'type'    => 'checkbox',
 			'id'      => 'ywgc_enable_pre_printed',
 			'desc'    => __( 'Choose if the physical gift cards are pre-printed. In this case the gift card code will not be generated automatically', 'yith-woocommerce-gift-cards' ),
+			'default' => 'no',
+		),
+		'ywgc_fix_mini_cart'            => array(
+			'name'    => __( 'Mini cart compatibility', 'yith-woocommerce-gift-cards' ),
+			'type'    => 'checkbox',
+			'id'      => 'ywgc_fix_mini_cart',
+			'desc'    => __( 'Enable this option if you have problems with the update of prices in the mini cart', 'yith-woocommerce-gift-cards' ),
 			'default' => 'no',
 		),
 		'ywgc_enable_shipping_discount' => array(

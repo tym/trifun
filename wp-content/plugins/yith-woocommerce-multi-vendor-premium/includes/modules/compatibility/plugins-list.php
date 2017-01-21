@@ -204,6 +204,7 @@ return array(
 		'installed_version' => 'YWSN_VERSION',
 		'min_version'       => '1.0.3',
 		'compare'           => '>=',
+		'is_new'            => true,
 	),
 
 	'bulk-product-editing' => array(
@@ -214,20 +215,21 @@ return array(
 		'installed_version' => 'YITH_WCBEP_VERSION',
 		'min_version'       => '1.1.23',
 		'compare'           => '>=',
+		'is_new'            => true,
 	),
 
-//	'best-price' => array(
-//		'name'              => 'YITH Best Price Guaranteed for WooCommerce',
-//		'landing_uri'       => '//yithemes.com/themes/plugins/yith-best-price-guaranteed-for-woocommerce/',
-//		'option_desc'       => __( 'If you enable this option, vendors will be able to manage best price notifications for products', 'yith-woocommerce-product-vendors' ),
-//		'post_types'        => array( 'yith_best_price' ),
-//		'capabilities'      => yith_wcmv_create_capabilities( 'yith_best_price' ),
-//		'premium'           => 'YITH_WCBPG_PREMIUM',
-//		'installed_version' => 'YITH_WCBPG_VERSION',
-//		'min_version'       => '1.0.2',
-//		'compare'           => '>=',
-//		'coming_soon'       => true,
-//	),
+	'best-price' => array(
+		'name'              => 'YITH Best Price Guaranteed for WooCommerce',
+		'landing_uri'       => '//yithemes.com/themes/plugins/yith-best-price-guaranteed-for-woocommerce/',
+		'option_desc'       => __( 'If you enable this option, vendors will be able to manage best price notifications for products', 'yith-woocommerce-product-vendors' ),
+		'post_types'        => array( 'yith_best_price' ),
+		'capabilities'      => yith_wcmv_create_capabilities( 'yith_best_price' ),
+		'premium'           => 'YITH_WCBPG_PREMIUM',
+		'installed_version' => 'YITH_WCBPG_VERSION',
+		'min_version'       => '1.0.2',
+		'compare'           => '>=',
+		'coming_soon'       => true,
+	),
 
 	'product-bundles' => array(
 		'name'              => 'YITH WooCommerce Product Bundles',
@@ -250,14 +252,4 @@ return array(
 		'compare'           => '>=',
 		'is_new'            => true,
 	),
-    'paypal-adaptive' => array(
-        'name'              => 'YITH PayPal Adaptive Payments for WooCommerce',
-        'landing_uri'       => '//yithemes.com/themes/plugins/yith-woocommerce-paypal-adaptive-payments/',
-        'option_desc'       => __( 'The vendor commissions are paid automatically by Adaptive Payments system', 'yith-woocommerce-product-vendors' ),
-        'premium'           => 'YITH_PAYPAL_ADAPTIVE_PREMIUM',
-        'installed_version' => 'YITH_PAYPAL_ADAPTIVE_VERSION',
-        'min_version'       => '1.0.0',
-        'compare'           => '>=',
-        'is_new'            => true,
-    ),
 );

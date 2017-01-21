@@ -121,7 +121,6 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Cards_Table' ) ) {
 				$username );
 		}
 
-
 		/**
 		 * show content for custom columns
 		 *
@@ -130,7 +129,8 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Cards_Table' ) ) {
 		 */
 		function add_custom_columns_content( $column_name, $post_ID ) {
 
-			$gift_card = new YWGC_Gift_Card_Premium( array( 'ID' => $post_ID ) );
+			$args              = array( 'ID' => $post_ID );
+			$gift_card         = new YWGC_Gift_Card_Premium( $args );
 
 			if ( ! $gift_card->exists() ) {
 				return;
@@ -138,31 +138,29 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Cards_Table' ) ) {
 
 			switch ( $column_name ) {
 				case YWGC_TABLE_COLUMN_ORDER :
-
-					if ( $gift_card->order_id ) {
-						echo $this->get_order_number_and_details( $gift_card->order_id );
-					} else {
-						_e( 'Created manually', 'yith-woocommerce-gift-cards' );
-					}
+					$order_id = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_ORDER_ID, true );
+					echo $this->get_order_number_and_details( $order_id );
 
 					break;
 
 				case YWGC_TABLE_COLUMN_AMOUNT :
+					$_amount = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_AMOUNT, true );
+					$_amount = empty( $_amount ) ? 0.00 : $_amount;
 
-					$_amount     = empty( $gift_card->amount ) ? 0.00 : $gift_card->amount;
-					$_amount_tax = empty( $gift_card->amount_tax ) ? 0.00 : $gift_card->amount_tax;
+					$_amount_tax = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_AMOUNT_TAX, true );
+					$_amount_tax = empty( $_amount_tax ) ? 0.00 : $_amount_tax;
 
 					echo wc_price( $_amount + $_amount_tax );
-
 					break;
 
 				case YWGC_TABLE_COLUMN_BALANCE:
+					$_amount = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE, true );
+					$_amount = empty( $_amount ) ? 0.00 : $_amount;
 
-					$_amount     = empty( $gift_card->balance ) ? 0.00 : $gift_card->balance;
-					$_amount_tax = empty( $gift_card->balance_tax ) ? 0.00 : $gift_card->balance_tax;
+					$_amount_tax = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_AMOUNT_BALANCE_TAX, true );
+					$_amount_tax = empty( $_amount_tax ) ? 0.00 : $_amount_tax;
 
 					echo wc_price( $_amount + $_amount_tax );
-
 					break;
 
 				case YWGC_TABLE_COLUMN_DEST_ORDERS:
@@ -179,10 +177,43 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Cards_Table' ) ) {
 					break;
 
 				case YWGC_TABLE_COLUMN_INFORMATION:
-					if ( YITH_YWGC()->prior_than_150() ) {
-						$this->show_details_on_gift_cards_table_prior_150( $post_ID, $gift_card );
+					$content = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_USER_DATA, true );
+					$recipient = isset( $content["recipient"] ) ? $content["recipient"] : '';
+
+					if ( empty( $recipient ) ) {
+						?>
+						<div>
+							<span><?php echo __( "Physical product", 'yith-woocommerce-gift-cards' ); ?></span>
+						</div>
+						<?php
 					} else {
-						$this->show_details_on_gift_cards_table( $post_ID, $gift_card );
+
+						$delivery_date = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_DELIVERY_DATE, true );
+						$email_date    = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_SENT, true );
+
+						if ( $email_date ) {
+							$status_class = "sent";
+							$message      = sprintf( __( "Sent on %s", 'yith-woocommerce-gift-cards' ), $email_date );
+						} else if ( $delivery_date >= current_time( 'Y-m-d' ) ) {
+							$status_class = "scheduled";
+							$message      = __( "Scheduled", 'yith-woocommerce-gift-cards' );
+						} else {
+							$status_class = "failed";
+							$message      = __( "Failed", 'yith-woocommerce-gift-cards' );
+						}
+						?>
+
+						<div>
+							<span><?php echo sprintf( __( "Recipient: %s", 'yith-woocommerce-gift-cards' ), $recipient ); ?></span>
+						</div>
+						<div>
+							<span><?php echo sprintf( __( "Delivery date: %s", 'yith-woocommerce-gift-cards' ), $delivery_date ); ?></span>
+							<br>
+							<span
+								class="ywgc-delivery-status <?php echo $status_class; ?>"><?php echo $message; ?></span>
+
+						</div>
+						<?php
 					}
 
 					break;
@@ -217,111 +248,57 @@ if ( ! class_exists( 'YITH_YWGC_Gift_Cards_Table' ) ) {
 
 				case YWGC_TABLE_COLUMN_ACTIONS:
 
-					YITH_YWGC()->admin->show_change_status_button( $post_ID, $gift_card );
-					YITH_YWGC()->admin->show_send_email_button( $post_ID, $gift_card );
+					$status_class = "";
+					$message   = "";
+					$action    = '';
+
+					//  Print some action button based on the gift card status, if the gift card is not dismissed
+					if ( $gift_card->can_be_enabled() ) {
+						$status_class = "gift-cards disabled";
+						$message      = __( "Enable", 'yith-woocommerce-gift-cards' );
+						$action       = YWGC_ACTION_ENABLE_CARD;
+					} elseif ( $gift_card->can_be_disabled() ) {
+						$status_class = "gift-cards enabled";
+						$message      = __( "Disable", 'yith-woocommerce-gift-cards' );
+						$action       = YWGC_ACTION_DISABLE_CARD;
+					}
+
+					if ( $action ) {
+						echo sprintf( '<a class="ywgc-actions %s" href="%s" title="%s">%s</a>',
+							$status_class,
+							esc_url( add_query_arg( array( $action => 1, 'id' => $post_ID ) ) ),
+							$message,
+							$message );
+					}
+
+					if ( $gift_card->is_dismissed() ) {
+						?>
+						<span
+							class="ywgc-dismissed-text"><?php _e( "This card is dismissed", 'yith-woocommerce-gift-cards' ); ?></span>
+						<?php
+
+					} else {
+						$content   = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_USER_DATA, true );
+						$recipient = isset( $content["recipient"] ) ? $content["recipient"] : '';
+						if ( ! empty( $recipient ) ) {
+
+							$send_now_link = sprintf( '<a class="ywgc-actions %s" href="%s" title="%s">%s</a>',
+								'gift-cards send-now',
+								esc_url_raw( add_query_arg( array(
+									YWGC_ACTION_RETRY_SENDING => 1,
+									'id'                      => $post_ID
+								) ) ),
+								__( "Send now", 'yith-woocommerce-gift-cards' ),
+								__( "Send now", 'yith-woocommerce-gift-cards' ) );
+
+							echo $send_now_link;
+						}
+					}
 
 					break;
 			}
 		}
 
-		/**
-		 * @param $post_ID
-		 * @param $gift_card
-		 */
-		public function show_details_on_gift_cards_table_prior_150( $post_ID, $gift_card ) {
-			$content   = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_USER_DATA, true );
-			$recipient = isset( $content["recipient"] ) ? $content["recipient"] : '';
-
-			if ( $gift_card->is_dismissed() ) {
-				?>
-				<span
-					class="ywgc-dismissed-text"><?php _e( "This card is dismissed.", 'yith-woocommerce-gift-cards' ); ?></span>
-				<?php
-			}
-
-			if ( empty( $recipient ) ) {
-				?>
-				<div>
-					<span><?php echo __( "Physical product", 'yith-woocommerce-gift-cards' ); ?></span>
-				</div>
-				<?php
-			} else {
-
-				$delivery_date = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_DELIVERY_DATE, true );
-				$email_date    = get_post_meta( $post_ID, YWGC_META_GIFT_CARD_SENT, true );
-
-				if ( $email_date ) {
-					$status_class = "sent";
-					$message      = sprintf( __( "Sent on %s", 'yith-woocommerce-gift-cards' ), $email_date );
-				} else if ( $delivery_date >= current_time( 'Y-m-d' ) ) {
-					$status_class = "scheduled";
-					$message      = __( "Scheduled", 'yith-woocommerce-gift-cards' );
-				} else {
-					$status_class = "failed";
-					$message      = __( "Failed", 'yith-woocommerce-gift-cards' );
-				}
-				?>
-
-				<div>
-					<span><?php echo sprintf( __( "Recipient: %s", 'yith-woocommerce-gift-cards' ), $recipient ); ?></span>
-				</div>
-				<div>
-					<span><?php echo sprintf( __( "Delivery date: %s", 'yith-woocommerce-gift-cards' ), $delivery_date ); ?></span>
-					<br>
-					<span
-						class="ywgc-delivery-status <?php echo $status_class; ?>"><?php echo $message; ?></span>
-
-				</div>
-				<?php
-			}
-		}
-
-		/**
-		 * @param int                    $post_ID
-		 * @param YWGC_Gift_Card_Premium $gift_card
-		 */
-		public function show_details_on_gift_cards_table( $post_ID, $gift_card ) {
-
-			if ( $gift_card->is_dismissed() ) {
-				?>
-				<span
-					class="ywgc-dismissed-text"><?php _e( "This card is dismissed.", 'yith-woocommerce-gift-cards' ); ?></span>
-				<?php
-			}
-
-			if ( ! $gift_card->is_digital ) {
-				?>
-				<div>
-					<span><?php echo __( "Physical product", 'yith-woocommerce-gift-cards' ); ?></span>
-				</div>
-				<?php
-			} else {
-
-				if ( $gift_card->delivery_send_date ) {
-					$status_class = "sent";
-					$message      = sprintf( __( "Sent on %s", 'yith-woocommerce-gift-cards' ), $gift_card->delivery_send_date );
-				} else if ( $gift_card->delivery_date >= current_time( 'Y-m-d' ) ) {
-					$status_class = "scheduled";
-					$message      = __( "Scheduled", 'yith-woocommerce-gift-cards' );
-				} else {
-					$status_class = "failed";
-					$message      = __( "Failed", 'yith-woocommerce-gift-cards' );
-				}
-				?>
-
-				<div>
-					<span><?php echo sprintf( __( "Recipient: %s", 'yith-woocommerce-gift-cards' ), $gift_card->recipient ); ?></span>
-				</div>
-				<div>
-					<span><?php echo sprintf( __( "Delivery date: %s", 'yith-woocommerce-gift-cards' ), $gift_card->delivery_date ); ?></span>
-					<br>
-					<span
-						class="ywgc-delivery-status <?php echo $status_class; ?>"><?php echo $message; ?></span>
-
-				</div>
-				<?php
-			}
-		}
 	}
 }
 

@@ -9,31 +9,13 @@ Version: 1.0
 */
 
 @import url("../mrtailor/style.css");
+@import url("herby-temp.css");
 @import url("print.css");
 
 /****************************************************************/
 /*************** ADD YOUR CUSTOM CSS IN THIS AREA ***************/
 /****************************************************************/
 
-.wccpf-cloning-group-title:after {
-	display: inline-block;
-	content: "(Increase quantity by 1 to add a name)";
-	position: relative;
-	margin-left: 10px;
-	font-size: 14px;
-}
-
-
-body.single-product .message {
-	display: none;
-	visibility: hidden;
-}
-
-
-body.single.single-product.postid-400 .message{
-	display: block;
-	visibility: visible ;
-}
 
 form.login > p {
 	max-width: 510px;
@@ -146,17 +128,7 @@ body.logged-in li.login {
 
 /* Some Med-Large NO DISPLAY */
 
-@media (min-width: 1025px) {
-	
-	.home-link {
-		display: none;
-		visibility: hidden;
-	}
-	
-}
-
 @media (min-width: 768px) {
-
 
 /*
 	body.home .site-logo {
@@ -793,88 +765,6 @@ article#post-263 .entry-content > p {
 .gift-card-verbiage{
 	text-align: center;
 }
-
-
-#custom-login {
-	display: block;
-	padding-top: 25px;
-}
-
-	#custom-login a {
-		padding: 1.1em 0 !important;
-		margin-bottom: 15px !important;
-		border-radius: 4px;
-	}
-
-#wpoa-login-google {
-	background: #DB4437;
-}
-
-.right-col {
-	float: right;
-	padding-left: 40px;
-}
-
-.ult-overlay-close {
-    background-color: rgba(233,146,0, .75);
-    border-radius: 10px;
-}
-
-.ywgc-postdate label, .ywgc-postdate input {
-	display: inline-block;
-}
-
-.ywgc-postdate label {
-	margin-right: 10px;
-}
-
-.style1 .ywgc-card-amount {
-	line-height: 2.5;
-}
-
-.ywgc-card-values {
-	background: #F7F4F4;
-}
-
-.gift_card_template_button.variations_button .multi-recipients:before {
-	content: "\2731";
-	margin-right: 5px;
-}
-
-.gift_card_template_button.variations_button .multi-recipients {
-	margin-bottom: 15px;
-}
-
-.thank_you_header > p {
-	font-size: 2.3125rem;
-	line-height: 1.351351em;
-	font-family: 'Arvo', Georgia, serif;
-}
-
-.the-button {
-	text-align: center;
-	margin-top: 45px;
-}
-
-.woocommerce > p {
-	display: none;
-}
-
-/* Password Stuff */
-
-
-.woocommerce-password-strength.short {
-	display: none !important;
-	visibility: hidden !important;
-}
-
-
-.woocommerce-password-hint { /* always show the hint */
-	display: block !important;
-	visibility: visible !important;
-	font-size: 14px !important;
-}
-
 /****************************************************************/
 /****************************************************************/
 /****************************************************************/

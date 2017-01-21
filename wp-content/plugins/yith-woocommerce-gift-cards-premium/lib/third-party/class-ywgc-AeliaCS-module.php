@@ -43,7 +43,6 @@ if ( ! class_exists( 'YWGC_AeliaCS_Module' ) ) {
 		}
 
 		public function __construct() {
-
 			/**
 			 * Aelia  Multi-currency support
 			 */
@@ -51,11 +50,6 @@ if ( ! class_exists( 'YWGC_AeliaCS_Module' ) ) {
 				$this,
 				'wc_aelia_currencyswitcher_product_convert_callback'
 			), 10, 2 );
-
-			add_filter( 'yith_ywgc_submitting_manual_amount', array(
-				$this,
-				'convert_manual_amount_to_base_currency'
-			) );
 
 			/**
 			 * Retrieve the array data key for the subtotal in the current currency
@@ -67,14 +61,11 @@ if ( ! class_exists( 'YWGC_AeliaCS_Module' ) ) {
 			 */
 			add_filter( 'yith_ywgc_line_subtotal_tax_key', array( $this, 'wc_aelia_line_subtotal_tax_key' ), 10, 2 );
 
-			/**
-			 * Show the amount of the gift card using the user currency
-			 */
-			add_filter( 'yith_ywgc_gift_card_template_amount', array(
-				$this,
-				'get_amount_in_gift_card_currency'
-			), 10, 2 );
-
+			///**
+			// * Set the amount from base currency to current currency
+			// */
+			//add_filter ( 'yith_ywgc_gift_card_coupon_amount', array ( $this, 'convert_base_currency_amount_to_user_currency' ), 10, 2 );
+//
 			/**
 			 * Set the amount from customer currency to base currency
 			 */
@@ -83,45 +74,20 @@ if ( ! class_exists( 'YWGC_AeliaCS_Module' ) ) {
 					$this,
 					'convert_user_currency_amount_to_base_currency'
 				) );
-
-			/**
-			 * Set the tax amount from customer currency to base currency
-			 */
-			add_filter( 'yith_ywgc_set_gift_card_coupon_amount_tax_before_deduct', array(
-				$this,
-				'convert_user_currency_amount_to_base_currency'
-			) );
-
-			/**
-			 * Set the amount from base currency to user currency
-			 */
-//			add_filter( 'yith_ywgc_convert_from_base_currency', array(
-//				$this,
-//				'convert_base_currency_amount_to_user_currency'
-//			), 10, 2 );
-			add_filter( 'yith_ywgc_convert_from_base_currency', array(
-				$this,
-				'convert_to_user_currency'
-			), 10, 2 );
-
-
-
-			return;
-
-			//			add_filter('yith_ywgc_set_cart_item_price', array(
-//				$this,
-//				'set_cart_item_price_currency'
 //
-//			), 10, 2);
+			///**
+			// * Set the tax amount from customer currency to base currency
+			// */
+			//add_filter ( 'yith_ywgc_set_gift_card_coupon_amount_tax_before_deduct', array ( $this, 'convert_user_currency_amount_to_base_currency' ) );
 
+			//add_filter ( 'ywgc_gift_card_creation_amount', array ( $this, 'convert_manual_amount_to_base_currency' ) );
 
 			//add_filter ( 'yith_ywgc_get_gift_card_price', array ( $this, 'convert_to_user_currency' ) );
 //
-
-		}
-
-		public function set_cart_item_price_currency( $amount, $cart_item ) {
-			return YWGC_AeliaCS_Module::get_amount_in_currency( $amount );
+			add_filter( 'yith_ywgc_gift_card_template_amount', array(
+				$this,
+				'get_amount_in_gift_card_currency'
+			), 10, 2 );
 		}
 
 		/**
@@ -148,7 +114,11 @@ if ( ! class_exists( 'YWGC_AeliaCS_Module' ) ) {
 
 		public function convert_manual_amount_to_base_currency( $amount ) {
 
-			return $this->convert_user_currency_amount_to_base_currency( $amount );
+			if ( isset( $_POST['ywgc-manual-amount'] ) ) {
+				$amount = $this->convert_user_currency_amount_to_base_currency( $amount );
+			}
+
+			return $amount;
 		}
 
 		/**
