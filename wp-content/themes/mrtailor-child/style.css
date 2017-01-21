@@ -1,0 +1,880 @@
+/*
+Theme Name: Mr. Tailor Child
+Theme URI: http://mrtailor.getbowtied.com/
+Description: This is a child theme for Mr. Tailor.
+Author: Get Bowtied
+Author URI: http: //www.getbowtied.com/
+Template: mrtailor
+Version: 1.0
+*/
+
+@import url("../mrtailor/style.css");
+@import url("print.css");
+
+/****************************************************************/
+/*************** ADD YOUR CUSTOM CSS IN THIS AREA ***************/
+/****************************************************************/
+
+.wccpf-cloning-group-title:after {
+	display: inline-block;
+	content: "(Increase quantity by 1 to add a name)";
+	position: relative;
+	margin-left: 10px;
+	font-size: 14px;
+}
+
+
+body.single-product .message {
+	display: none;
+	visibility: hidden;
+}
+
+
+body.single.single-product.postid-400 .message{
+	display: block;
+	visibility: visible ;
+}
+
+form.login > p {
+	max-width: 510px;
+	margin: 0 auto 25px auto;
+	text-align: center;
+}
+
+.shop_table.subscription_details tr:nth-child(3), .shop_table.subscription_details tr:nth-child(4), .shop_table.subscription_details tr:nth-child(5) {
+display: none; visibility: hidden;
+
+}
+
+.woocommerce > p {
+	display: none;
+	visibility: hidden;
+}
+
+#home-icon {
+	float: left;
+	line-height: 2.25;
+	font-size: large
+}
+
+#home-icon:hover {
+	color: #FDDFAD;
+}
+
+
+table.shop_table.order_details tbody tr.order_item.yith-wcpb-child-of-bundle-table-item {
+	display: none;
+	visibility: hidden;
+}
+
+
+td.yith-wcpb-product-bundled-item-data p {
+	line-height: 55px;
+}
+
+.memb-card {
+    display: inline-block;
+    border: 1px solid rgba(0,0,0, .35);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    min-height: 270px;
+	background: rgb(254,254,254); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(254,254,254,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(226,226,226,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(254,254,254,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(226,226,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(254,254,254,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(226,226,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+}
+
+	.mono {
+		font-family: Andal Mono, Courier New, Courier, monospace;
+		margin-top: 20px;
+		display: block;
+		clear: both;
+	}
+	.memb-card h1.print, .memb-card h2.print {
+		margin-top: 0;
+		text-align: center;
+		margin-bottom: 0;
+	}
+
+	.memb-card img {
+ 	   width: 35%;
+ 	   margin-bottom: 25px;
+}
+
+mark {
+	background: none;
+	font-weight: 600;
+
+}
+
+.site-social-icons ul li a i {
+	font-size: 20px;
+}
+
+.site-header-sticky-inner li a {
+
+}
+
+body.logged-in li.login {
+	display: none;
+}
+
+.site-header-sticky-inner {
+	display: block;
+	visibility: visible;
+}
+
+	.site-header-sticky-inner .site-tools {
+		background: #fff;
+	}
+
+	body.home .site-header-sticky-inner #site-navigation a {
+		color: #4d4d4d;
+	}
+
+	body.home .site-header-sticky-inner .site-logo {
+		display: block;
+		visibility: visible;
+	}
+
+
+#site-navigation-top-bar {
+	float: left;
+}
+
+/* Some Med-Large NO DISPLAY */
+
+@media (min-width: 1025px) {
+	
+	.home-link {
+		display: none;
+		visibility: hidden;
+	}
+	
+}
+
+@media (min-width: 768px) {
+
+
+/*
+	body.home .site-logo {
+		display: none;
+		visibility: hidden;
+	}
+
+*/
+	body.home .site-header {
+	    background: rgba(0,0,0, 0);
+	    display: none;
+	}
+
+
+}
+
+/***********************************/
+
+#custom-nav {
+	text-align: right;
+}
+
+.site-social-icons-wrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right: 30px;
+}
+
+	.site-social-icons {
+		text-align: right;
+	}
+
+	.site-social-icons ul li {
+		float: none;
+		display: inline-block;
+	}
+
+.site-tools:before, .site-tools:after, .site-social-icons-wrapper:before, .site-social-icons-wrapper:after {
+	clear: both;
+	display: table;
+	content: " ";
+	height: 0;
+}
+
+.site-tools {
+	background: #F9A11D;
+	display: inline-block;
+	float: right;
+	    top: 18px;
+    min-height: 43px;
+    min-width: 43px;
+    text-align: center;
+    padding-right: 7px;
+}
+
+.site-tools ul li {
+	display: inline-block;
+	list-style: none;
+}
+
+
+
+/*
+body.home .page_with_slider {
+    margin-top: -155px;
+}
+*/
+
+body.home #site-navigation a {
+	color: #ffffff;
+}
+
+#site-navigation a:hover {
+	color: #20B4E9;
+}
+
+.btn-modal {
+	padding: 1.5em 2em;
+}
+
+.quantity {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.reserve-btn {
+	display: inline-block;
+	padding: 1.5em;
+	background: #DA1F26;
+	border-radius: 4px;
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover.reserve-btn {
+	color: #fff;
+	opacity: .8
+}
+
+.venue-info {
+	display: block;
+}
+
+
+label[for="terms"] {
+	text-transform: none !important;
+}
+
+input.button[name="update_cart"] {
+	color: #ffffff !important;
+	opacity: 1 !important;
+}
+
+body.postid-400 .add, body.postid-551 .add  {
+	display: block!important;
+}
+
+#page-content {
+	padding-bottom: 20px;
+}
+
+#page-thumb img {
+	margin-bottom: 20px;
+	border: 1px solid rgba(0,0,0, .1);
+	border-radius: 6px;
+}
+
+.content {
+	clear: both;
+	display: block;
+}
+
+.center {
+	text-align: center;
+}
+
+.buy-now {
+	display: inline-block;
+    color: #fff;
+    background: #DA1F26;
+    padding: 15px 30px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.buy-now:hover {
+	background: #FAA51D;
+	color: #fff;
+}
+
+.prod-vid {
+	border-top: 1px solid #ccc;
+	padding-top: 25px;
+	margin-top: 15px;
+	padding-bottom: 15px;
+}
+
+p strong {
+	font-weight: 700;
+}
+
+td.yith-wcpb-product-bundled-item-data h3 {
+	font-size: 16px;
+}
+
+.main-navigation ul li.acct-login {
+	background: rgba(0,0,0, .15);
+    border-radius: 3px;
+}
+
+.product_thumbnail {
+	border: 1px solid rgba(0,0,0, .1);
+}
+
+.woocommerce div.product form.cart table td, .woocommerce-page div.product form.cart table td, .woocommerce #content div.product form.cart table td, .woocommerce-page #content div.product form.cart table td {
+	padding: 10px!important;
+}
+
+#site-footer .acct-login {
+	display: inline-block;
+	margin-top: 15px;
+}
+
+#site-footer .acct-login a {
+	background: #31b7e2;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#site-footer .widget li:last-child {
+	padding-bottom: 10px;
+}
+
+/************************** DISPLAYS NONE *******************************/
+
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--subscriptions, .woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-address {
+	display: none;
+}
+
+.prod-price { /* hide on all products EXCEPT the Membership and MEmb. Card */
+	display: none;
+}
+
+body.postid-1319 #page-thumb, body.postid-1319 #page-content .prod-price {
+	display: none;
+	visibility: hidden;
+}
+
+body.postid-400 .prod-price, body.postid-551 .prod-price,  body.postid-1319 .prod-price, body.postid-1319.single-product .add {
+	display: block;
+}
+
+.site-header-wrapper {
+	display: none;
+	visibility: hidden;
+}
+
+body.postid-474 .phone, body.postid-1319 .phone {
+	display: none;
+	visibility: hidden;
+}
+
+
+body.single-product .add{
+	display: none;
+}
+
+.woocommerce-message {
+	display: none;
+}
+
+.page_with_slider > .main-slider-fullscreen { /* hides the dumb slider on homepage */
+	display: none;
+	visibility: hidden;
+}
+
+.by-vendor-name {
+	display: none;
+}
+
+.product_infos .product_meta, .vc_gitem-post-data-source-post_title, .yith_wc_vendor_tab, .cart_item.yith-wcpb-child-of-bundle-table-item, .single-product.without-sidebar .product_infos, body.single article.category-blog .entry-meta, body.single article.category-blog .post-share-container {
+	display: none !important;
+}
+
+table.yith-wcpb-product-bundled-items .yith-wcpb-product-bundled-item-data h3, table.yith-wcpb-product-bundled-items .yith-wcpb-product-bundled-item-data input {
+	display: none
+}
+
+.yith-wcpb-product-bundled-item-image .price del span.amount {
+	display: none !important;
+}
+
+.yith-wcpb-bundle-table-item .amount {
+	display: none;
+}
+
+.woocommerce-page #payment .terms label{
+	font-size: 16px;
+}
+
+/*
+.product_after_shop_loop_buttons, .product_after_shop_loop_price {
+	display: none;
+}
+*/
+
+/*
+.vc_grid-item .vc_grid-item-mini {
+    border: 1px solid rgba(0,0,0, .1);
+}
+*/
+
+body.postid-400 .phone, body.postid-400 .prod-vid, body.postid-400 .buy-now, body.postid-400 .location, body.postid-400 .website, body.postid-551 .phone, body.postid-551 .prod-vid, body.postid-551 .buy-now, body.postid-551 .location, body.postid-551 .website {
+	display: none;
+}
+
+.login-register-container .account-tab-item.last, tr.recurring-totals, tr.cart-subtotal.recurring-total, .tax-total.recurring-total, .order-total.recurring-total {
+	display: none;
+	visibility: hidden;
+}
+
+
+
+/**************************************** END DISPLAY NONE *************************************************/
+
+
+.center {
+	text-align: center;
+	float: none;
+	margin: 0 auto;
+}
+
+
+/* Some Breakpoints */
+
+@media (min-width: 320px) {
+
+	.site-tools.site_tools_sticky, .site-tools.site_tools_sticky .main-navigation {
+		display: block;
+		visibility: visible;
+	}
+
+	.site-tools.site_tools_sticky .site-header-sticky-inner .site-logo {
+		display: block
+	}
+
+	.site-tools.site_tools_sticky .site-header-sticky-inner #site-menu {
+		display: block;
+		visibility: visible;
+	}
+
+}
+
+.site-tools:before, .site-tools:after {
+	clear: both;
+	display: table;
+	content: " ";
+	height: 0;
+}
+
+@media (max-width: 1024px) {
+
+	#menu-main-navigation-3 { /* hide this for mobile menu */
+		display: none;
+		visibility: hidden;
+	}
+
+	.st-menu.slide-from-left.open .mobile-socials {
+/*
+		display: none;
+		visibility: hidden;
+*/
+	}
+
+	#lang-message {
+	    display: none;
+	    visibility: hidden;
+	}
+
+	.site-tools {
+		float: right;
+		top: 18px;
+	}
+
+	#site-navigation-top-bar.main-navigation {
+		display: none;
+		visibility: hidden;
+	}
+
+	#site-top-bar {
+		display: block;
+	}
+
+	.main-navigation {
+		display: block;
+		text-align: center;
+		clear: both;
+		float: none;
+		width: 100%;
+	}
+
+		.main-navigation ul li {
+			float: none;
+			display: inline-block;
+
+		}
+
+		.main-navigation a {
+			font-size: 16px;
+		}
+
+	#custom-nav {
+		display: block;
+		clear: both;
+		float: none;
+		text-align: center;
+	}
+
+	#custom-nav:before, #custom-nav:after {
+		clear: both;
+		content: " ";
+		display: table;
+		height: 0;
+	}
+
+	.site-social-icons-wrapper {
+		float: left;
+		display: inline-block;
+		padding-left: 0;
+	}
+
+}
+
+#video-button {
+
+}
+
+#video-button button.ubtn-large {
+	padding: 1.2em;
+	border-radius: 4px;
+	font-size: 1.1em;
+}
+
+@media (min-width: 769px) {
+
+	#video-button {
+		display: none;
+	}
+
+
+}
+
+@media (max-width: 768px) {
+
+	.upb_video-wrapper { /* hide home video */
+		display: none;
+	}
+
+	#video-button {
+		display: block;
+		margin-top: -10%;
+	}
+
+ 	#home-vid {
+		background: url('http://68.168.245.132/~trifun/wp-content/themes/mrtailor-child/img/home-img-4.png');
+		background-color: #40c7f2;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.video-logo, .modal-button {
+		display: none;
+	}
+
+
+}
+
+@media (max-width: 650px) {
+
+	.site-social-icons ul {
+		padding: 0
+	}
+	.site-social-icons ul li {
+		padding: 15px 15px 0 15px;
+	}
+
+	.site-tools {
+		float: none;
+		display: block;
+		clear: both;
+	}
+
+	.site-social-icons-wrapper {
+		clear: both;
+		float: none;
+		display: block;
+		text-align: center;
+		width: 100%;
+		padding-left: 15px;
+	}
+
+	.site-tools ul li.mobile-menu-button {
+		float: none;
+	}
+
+	.mobile-menu-text {
+		font-size: 18px;
+		letter-spacing: .1em
+	}
+
+	.site-social-icons {
+		text-align: center;
+	}
+
+}
+
+
+.woocommerce-Message.woocommerce-Message--info.woocommerce-info .woocommerce-Button.button {
+	background-color: #FAAF31 !important;
+	padding: 15px;
+	color: #ffffff!important;
+}
+
+/*
+
+.woocommerce-cart.woocommerce-page table.cart td.product-subtotal, .woocommerce-cart.woocommerce-page #content table.cart td.product-subtotal, .woocommerce-cart.woocommerce-page table.cart td.product-subtotal, .woocommerce-cart.woocommerce-page #content table.cart td.product-subtotal {
+
+}
+*/
+
+
+.juicer-feed h1.referral{
+	display: none;
+}
+
+/*.shop_table.cart span.woocommerce-Price-amount.amount:after {
+	display: block;
+	font-size: 14px;
+	clear: both;
+	color: rgba(0,0,0, .55);
+}*/
+
+
+article#post-263 .entry-content > p {
+	display: none;
+	visibility: hidden;
+}
+
+
+
+.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--dashboard {
+	display: none;
+    visibility: hidden;
+}
+
+.order-actions a.button.view:after {
+	content: "Membership";
+	display: inline-block;
+	margin-left: 7px;
+}
+
+
+#customer_details .col-2 .woocommerce-shipping-fields {
+	display: none;
+	visibility: hidden;
+}
+
+
+
+.js-show-social-login form.login, .woocommerce-checkout form.login .wc-social-login, .checkout_login .large-8.large-centered.text-center.columns > form.login {
+	display: block !important;
+	visibility: visible;
+}
+
+
+.checkout_login .large-8.large-centered.text-center.columns > form.login .form-row.form-row-first, .checkout_login .large-8.large-centered.text-center.columns > form.login .form-row.form-row-last, .checkout_login .large-8.large-centered.text-center.columns > form.login p.form-row, .checkout_login .large-8.large-centered.text-center.columns > form.login p.lost_password {
+/*
+	display: none;
+	visibility: hidden;
+*/
+}
+
+.woocommerce-checkout form.login .wc-social-login > p, .checkout_login .woocommerce-info {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+
+.wc-social-login.form-row-wide {
+	text-align: center;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.wc-social-login.form-row-wide a {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+.checkout_coupon_box > .woocommerce-info {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.checkout_coupon_box > .row .large-8.large-centered.text-center.columns > form.checkout_coupon {
+	display: block !important;
+	visibility: visible !important;
+}
+
+.checkout_coupon_box > .row .large-8.large-centered.text-center.columns > form.checkout_coupon:before {
+	content: "Have a coupon? Enter it here.";
+	display: block;
+	font-size: 1.875em;
+	color: #ce2323;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	font-family: 'Arvo', serif;
+}
+
+.checkout_login form p:first-child, .woocommerce-page form.login p:first-child {
+	font-family: 'Arvo', serif;
+	font-size: 1.2em;
+}
+
+
+.ywgc-generator .ywgc-template.style1,  .ywgc-generator .ywgc-preview{
+	display: block;
+	margin: 0 0 25px;
+}
+
+.ywgc-card-code {
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.ywgc-card-message {
+	padding: 15px;
+}
+
+
+.gift-cards-list {
+	display: none;
+}
+
+.woocommerce .blockUI.blockOverlay {
+	height: 300px;
+	bottom: 0px;
+}
+
+.woocommerce .alignleft .wc-customer-search{
+	display: none !important;
+}
+
+.slide-from-right{
+	display: none;
+}
+
+.postid-1319 .the-button{
+	display: none;
+}
+.gift-card-content-editor{
+	width: 500px;
+}
+.gift-card-verbiage{
+	text-align: center;
+}
+
+
+#custom-login {
+	display: block;
+	padding-top: 25px;
+}
+
+	#custom-login a {
+		padding: 1.1em 0 !important;
+		margin-bottom: 15px !important;
+		border-radius: 4px;
+	}
+
+#wpoa-login-google {
+	background: #DB4437;
+}
+
+.right-col {
+	float: right;
+	padding-left: 40px;
+}
+
+.ult-overlay-close {
+    background-color: rgba(233,146,0, .75);
+    border-radius: 10px;
+}
+
+.ywgc-postdate label, .ywgc-postdate input {
+	display: inline-block;
+}
+
+.ywgc-postdate label {
+	margin-right: 10px;
+}
+
+.style1 .ywgc-card-amount {
+	line-height: 2.5;
+}
+
+.ywgc-card-values {
+	background: #F7F4F4;
+}
+
+.gift_card_template_button.variations_button .multi-recipients:before {
+	content: "\2731";
+	margin-right: 5px;
+}
+
+.gift_card_template_button.variations_button .multi-recipients {
+	margin-bottom: 15px;
+}
+
+.thank_you_header > p {
+	font-size: 2.3125rem;
+	line-height: 1.351351em;
+	font-family: 'Arvo', Georgia, serif;
+}
+
+.the-button {
+	text-align: center;
+	margin-top: 45px;
+}
+
+.woocommerce > p {
+	display: none;
+}
+
+/* Password Stuff */
+
+
+.woocommerce-password-strength.short {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+
+.woocommerce-password-hint { /* always show the hint */
+	display: block !important;
+	visibility: visible !important;
+	font-size: 14px !important;
+}
+
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/

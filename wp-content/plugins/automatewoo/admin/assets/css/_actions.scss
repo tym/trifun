@@ -1,0 +1,68 @@
+.aw-actions-container {
+	padding: 10px 15px;
+}
+
+.aw-action-template {
+	display: none;
+}
+
+.aw-action {
+	margin: 5px 0 10px;
+
+	.aw-action-header {
+		position: relative;
+		padding: 14px 17px;
+		border: 1px solid $grey-light-border;
+
+		h4 {
+			font-size: 14px;
+			margin: 0;
+			display: inline-block;
+		}
+
+		.row-options {
+			float: right;
+			font-size: 12px;
+
+			a {
+				text-decoration: none;
+				margin: 0 4px;
+			}
+		}
+
+	}
+
+
+	.aw-table td.aw-label {
+		width: 26%;
+	}
+
+	.aw-action-fields-container {
+		border: 1px solid $grey-light-border;
+		display: none;
+	}
+
+
+	.wp-editor-container {
+		iframe {
+			min-height: 300px;
+		}
+	}
+
+
+	&.js-open {
+		.aw-action-header {
+			background: #3595BC;
+			background-image: linear-gradient(to bottom, #46AFDB, #3199C5);
+			border: #268FBB solid 1px;
+			box-shadow: inset #5FC8F4 0 1px 0 0;
+			color: #fff;
+			text-shadow: #268FBB 0 1px 0;
+
+			h4, a {
+				color: white;
+			}
+		}
+	}
+
+}

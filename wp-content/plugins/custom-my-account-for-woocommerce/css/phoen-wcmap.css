@@ -1,0 +1,15 @@
+.phoen-wcmap{margin:0; padding:0;}
+.phoen-wcmap * {margin:0; padding:0; box-sizing:border-box;}
+.phoen-wcmap-row{margin:0 -15px;}
+.phoen-myaccount-menu{width:30%; float:left; padding:0 15px;box-sizing:border-box;}
+.phoen-myaccount-menu .myaccount-menu{margin:0; padding:0;}
+.phoen-myaccount-menu .myaccount-menu li{list-style:none; padding:15px 0; border-top:1px solid #ccc; margin:0;}
+.phoen-myaccount-menu .myaccount-menu li:first-child{border-top:0 none;}
+.phoen-myaccount-menu .myaccount-menu li a{text-decoration:none;}
+.phoen-myaccount-content{width:70%;float:right;padding:0 15px;box-sizing:border-box;}
+
+/*---responsive---*/
+@media (max-width:767px){
+	.phoen-myaccount-menu{width:100%; margin-bottom:15px;}
+	.phoen-myaccount-content{width:100%;}
+}

@@ -1,0 +1,57 @@
+/**
+ * Shortcodes Tab
+ *
+ * @author Leanza Francesco
+ */
+.yith-wcmbs-admin-shortcode-container {
+    width         : 100%;
+    padding       : 20px;
+    margin-right  : 20px;
+    box-sizing    : border-box;
+    background    : #fff;
+    margin-bottom : 20px;
+}
+
+.yith-wcmbs-admin-shortcode-container h3 {
+    margin-top : 0;
+}
+
+.yith-wcmbs-admin-shortcode-container h4 {
+    margin-top     : 20px;
+    margin-bottom  : 0;
+    text-transform : uppercase;
+}
+
+.yith-wcmbs-admin-shortcode-container p.description {
+    font-style : italic;
+}
+
+.yith-wcmbs-admin-shortcode-container table.arguments {
+    margin          : 10px 0;
+    border-collapse : collapse;
+    border-radius   : 7px;
+    overflow        : hidden;
+    width           : 500px;
+}
+
+.yith-wcmbs-admin-shortcode-container table.arguments td {
+    padding       : 15px;
+    border-bottom : 2px solid #fff;
+    background    : #f1f1f1;
+}
+
+.yith-wcmbs-admin-shortcode-container table.arguments tr:last-child td {
+    border : none;
+}
+
+.yith-wcmbs-admin-shortcode-container table.arguments td.argument-id {
+    background  : #555555;
+    color       : #fff;
+    font-weight : 700;
+    text-align  : center;
+    width       : 80px;
+}
+
+.yith-wcmbs-admin-shortcode-container table.arguments td.argument-desc {
+    text-align : justify;
+}

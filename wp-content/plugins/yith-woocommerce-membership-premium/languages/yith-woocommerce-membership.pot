@@ -1,0 +1,1756 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Membership\n"
+"POT-Creation-Date: 2016-08-25 13:01+0200\n"
+"PO-Revision-Date: 2016-01-13 15:19+0100\n"
+"Last-Translator: \n"
+"Language-Team: Yithemes <plugins@yithemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: plugin-fw\n"
+
+#: class.yith-wcmbs-admin-premium.php:267
+msgid ""
+"This membership plan cannot be deleted or trashed because it is currently "
+"active for one or more users! To delete it, all memberships linked to this "
+"plan must expire or be cancelled."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:269
+msgid "Return to membership plans page"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:272
+msgid "Error"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:383
+msgid "Memebership Actions"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:411
+msgid "Membership Info"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:462
+msgid "Included in memberships"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:708
+msgid "Select All"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:712
+msgid "Deselect All"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:772
+msgid "Set access"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:778
+msgid "Plan Item Order"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:782
+msgid "Item list style of the shortcode"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:952 class.yith-wcmbs-admin.php:292
+msgctxt "plugin name in admin WP menu"
+msgid "Membership"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:953
+#: class.yith-wcmbs-admin-premium.php:954
+msgid "Plans"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:955
+msgid "Plan"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:956
+msgid "Add Plan"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:957
+msgid "New Plan"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:958
+msgid "Edit Plan"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:959
+msgid "View Plan"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:960
+msgid "Plan not found"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:961
+msgid "Plan not found in trash"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1004
+msgid "Membership Plan Options"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1010
+msgid "Planned Items"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1013
+msgid "Allowed Product Categories"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1014
+msgid "Select which product categories members will have access to."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1020
+msgid "Allowed Post Categories"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1021
+msgid "Select which post categories members will have access to."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1027
+msgid "Allowed Product Tags"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1028
+msgid "Select which product tags members will have access to."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1034
+msgid "Allowed Post Tags"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1035
+msgid "Select which post tags members will have access to."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1041
+msgid "Include Products"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1042
+msgid "Select the products to include in the membership."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1051
+msgid "Include Posts"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1052
+msgid "Select the posts to include in the membership."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1059
+msgid "Include Pages"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1060
+msgid "Select the pages to include in the membership."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1069 class.yith-wcmbs-admin.php:238
+#: class.yith-wcmbs-admin.php:282
+msgid "Settings"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1072
+msgid "Select membership product"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1073
+#: plugin-options/settings-options.php:28
+msgid ""
+"Select the product that users have to purchase to get a membership access"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1079
+msgid "Duration"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1080
+msgid ""
+"Select the duration of the membership plan (in days). Set 0 for unlimited "
+"duration."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1086
+msgid "Linked Plans"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1087
+#: class.yith-wcmbs-admin-premium.php:1166
+msgid "Select the plans you want to assign to this plan."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1093
+msgid "Show contents in Membership History"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1094
+msgid "Select this option if you want to show contents in Membership History."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1105
+msgid "Download number for first term"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1106
+msgid ""
+"Select the initial limit for downloads (for the first term). Set to -1 if "
+"you want it will be equal to Download number for every period."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1112
+msgid "Download number for every term"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1113
+msgid ""
+"Select the limit for downloads for every term. Set 0 for unlimited. Please "
+"note: Download number will not be applied to current memberships that are "
+"not provided with it!"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1119
+msgid "Define Download term"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1120
+msgid "Select the limit term for downloads."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1126
+msgid "Download term unit"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1127
+msgid "Select the limit term unit for downloads."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1130
+msgid "days"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1131
+msgid "weeks"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1132
+msgid "months"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1133
+msgid "years"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1138
+msgid "Can be accumulated"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1139
+msgid "Select this option if you want that downloads can be accumulated."
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1156
+#: class.yith-wcmbs-admin-premium.php:1162
+#: class.yith-wcmbs-admin-premium.php:1165
+msgid "Alternative Content"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1187 class.yith-wcmbs-admin.php:321
+msgid "Your Inspiration Themes"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1191 class.yith-wcmbs-admin.php:260
+#: class.yith-wcmbs-admin.php:329
+msgid "Plugin Documentation"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1195
+msgid "FAQ"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1199 class.yith-wcmbs-admin.php:333
+msgid "Live Demo"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1203
+msgid "Support Desk"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1295
+msgid "Duplicate"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1320
+msgid "Copy"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1361
+msgid "Membership Item Shortcode"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1377
+msgid "Copy to clipboard"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1397
+msgid "ID"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1398
+#: includes/admin/class.yith-wcmbs-admin-profile.php:261
+#: includes/class.yith-wcmbs-advanced-administration.php:231
+#: includes/class.yith-wcmbs-membership.php:535
+#: templates/premium/frontend/my_account_membership_plans.php:36
+#: templates/premium/frontend/my_account_membership_plans.php:76
+#: templates/premium/metaboxes/membership_info_content.php:99
+msgid "Status"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1399
+#: includes/class.yith-wcmbs-messages-manager-admin.php:427
+#: templates/premium/metaboxes/membership_info_content.php:44
+msgid "User"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1400
+msgid "Order"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1401
+#: includes/admin/class.yith-wcmbs-admin-profile.php:258
+#: includes/class.yith-wcmbs-advanced-administration.php:211
+#: includes/class.yith-wcmbs-membership.php:519
+#: templates/premium/frontend/my_account_membership_plans.php:34
+#: templates/premium/metaboxes/membership_info_content.php:20
+msgid "Starting Date"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1402
+#: includes/admin/class.yith-wcmbs-admin-profile.php:259
+#: includes/class.yith-wcmbs-advanced-administration.php:215
+#: includes/class.yith-wcmbs-membership.php:520
+#: templates/premium/frontend/my_account_membership_plans.php:35
+#: templates/premium/metaboxes/membership_info_content.php:24
+msgid "Expiration Date"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1492
+#: class.yith-wcmbs-admin-premium.php:1501
+#, php-format
+msgctxt "full name"
+msgid "%1$s %2$s"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1503
+msgid "Guest"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1507
+#, php-format
+msgctxt "Order number by X"
+msgid "%s by %s"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1509
+#, php-format
+msgid "%s [Order not found]"
+msgstr ""
+
+#: class.yith-wcmbs-admin-premium.php:1517
+msgid "created by Admin"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:141
+msgctxt "plugin name in admin WP menu"
+msgid "All Memberships"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:142 class.yith-wcmbs-admin.php:143
+msgid "All Memberships"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:144 class.yith-wcmbs-admin.php:145
+#: class.yith-wcmbs-admin.php:147
+#: templates/premium/metaboxes/protected-links.php:33
+#: templates/premium/metaboxes/user_info.php:25
+msgid "Membership"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:146
+msgid "New Membership"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:148
+msgid "View Membership"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:149
+msgid "Membership not found"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:150
+msgid "Membership not found in trash"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:208 templates/metaboxes/restrict_access.php:9
+msgid "All Members"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:211
+msgid "All Non-Members"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:291
+msgctxt "plugin name in admin page title"
+msgid "Membership"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:325
+msgid "Premium"
+msgstr ""
+
+#: class.yith-wcmbs-admin.php:348
+msgid "Allow access to"
+msgstr ""
+
+#: class.yith-wcmbs-frontend-premium.php:270
+#, php-format
+msgid "You cannot purchase \"%s\". To do it, you need a membership plan"
+msgstr ""
+
+#: class.yith-wcmbs-frontend-premium.php:455
+msgid "Membership Plans:"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:82
+msgid "Filter by membership plan"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:89
+#: templates/premium/reports/download-reports.php:24
+#: templates/premium/reports/reports - Copia.php:206
+msgid "Filter"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:107
+msgid "Membership bulk editing"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:108
+msgid "Cancel membership"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:109
+msgid "New membership"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:110
+msgid "Delete history"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:114
+msgid "Select membership plan"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:121
+msgid "Apply"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:234
+msgid "Membership plan history:"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:238
+msgid "This user doesn't have any membership plan."
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:260
+#: includes/class.yith-wcmbs-advanced-administration.php:219
+#: templates/premium/metaboxes/membership_info_content.php:28
+msgid "Order ID"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:262
+msgid "Last Update"
+msgstr ""
+
+#: includes/admin/class.yith-wcmbs-admin-profile.php:305
+#: includes/compatibility/multivendor-utils/class.yith-wcmbs-members-list-table.php:48
+msgid "Membership Plans"
+msgstr ""
+
+#: includes/class.ajax-products-field.php:116
+msgid "Search for a product..."
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:29
+msgid "Membership Free Shipping"
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:30
+msgid ""
+"Membership Free Shipping is a special method enabled only for members in the "
+"plan specified below."
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:50
+msgid "an active membership plan"
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:61
+#: includes/class.yith-wcmbs-messages-widget.php:36
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:55
+msgid "Title"
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:63
+msgid "This is the shipping method title shown to users in checkout page."
+msgstr ""
+
+#: includes/class.wc-shipping-membership-free-shipping.php:68
+msgid "Membership Free Shipping requires..."
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:84
+msgid "Advanced Administration"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:172
+msgid "Enable"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:177
+msgid "Undo"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:185
+msgid "Set unlimited"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:207
+msgid "Plan ID"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:223
+msgid "Order Item ID"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:227
+msgid "User ID"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:235
+msgid "Paused days"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:239
+#: templates/premium/metaboxes/membership_info_content.php:69
+msgid "Remaining Credits"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:243
+msgid "Last Credit Update"
+msgstr ""
+
+#: includes/class.yith-wcmbs-advanced-administration.php:247
+msgid "Next Credit Update"
+msgstr ""
+
+#: includes/class.yith-wcmbs-member.php:104
+#: includes/class.yith-wcmbs-orders.php:107
+#: includes/functions.yith-wcmbs-update.php:34
+#: plugin-options/settings-options.php:18
+msgctxt "Default value for Membership Plan Name"
+msgid "Membership"
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:152
+msgid "Membership successfully created."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:205
+msgid "Membership has now been activated."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:214
+msgid "Membership paused."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:241
+#: includes/class.yith-wcmbs-membership.php:243
+msgid "Membership resumed."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:241
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:112
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:281
+#, php-format
+msgid "Expiration date set to %s."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:253
+#: includes/class.yith-wcmbs-membership.php:259
+#, php-format
+msgid "Membership status updated to %s."
+msgstr ""
+
+#: includes/class.yith-wcmbs-membership.php:571
+#: templates/premium/frontend/my_account_membership_plans.php:45
+msgid "Unlimited"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:93
+#: includes/class.yith-wcmbs-messages-manager-admin.php:94
+#: includes/class.yith-wcmbs-messages-manager-admin.php:135
+#: includes/class.yith-wcmbs-messages-widget.php:35
+msgid "Messages"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:95
+#: includes/class.yith-wcmbs-messages-manager-admin.php:98
+msgid "Message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:96
+msgid "Add Message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:97
+msgid "New Message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:99
+msgid "View Message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:100
+msgid "Message not found"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:101
+msgid "Message not found in trash"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:134
+msgid "User Info"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:136
+#: includes/class.yith-wcmbs-messages-manager-admin.php:405
+msgid "Send Message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:160
+msgid "This user doesn't have any active membership plan!"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:190
+#: includes/class.yith-wcmbs-messages-widget.php:63
+msgid "Get older messages"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:382
+msgid "An error occurred while sending the message"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:429
+msgid "Last answer by"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:430
+msgid "Last date"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-manager-admin.php:495
+msgid "Delete Thread"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-widget.php:28
+msgid "Display message widget for members."
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-widget.php:30
+msgid "YITH Membership - Messages"
+msgstr ""
+
+#: includes/class.yith-wcmbs-messages-widget.php:74
+#: templates/premium/metaboxes/send_message.php:10
+msgid "Send"
+msgstr ""
+
+#: includes/class.yith-wcmbs-orders.php:65
+#, php-format
+msgid "Reason: Order #%s status changed from %s to %s"
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:110
+#: templates/premium/metaboxes/membership_info_content.php:68
+msgid "Credits"
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:225
+msgid "You can't access to this content. You don't have enough credits."
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:227
+#, php-format
+msgid "This product needs one credit,"
+msgid_plural "This product needs %s credits,"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class.yith-wcmbs-products-manager.php:228
+#, php-format
+msgid "but you have only one credit!"
+msgid_plural "but you have only %s credits!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class.yith-wcmbs-products-manager.php:229
+#: includes/class.yith-wcmbs-products-manager.php:315
+#: includes/class.yith-wcmbs-protected-links.php:133
+#: includes/class.yith-wcmbs-protected-media.php:143
+msgid "Restricted Access."
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:275
+msgid "Remember that only downloadable products will be visible to members."
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:315
+msgid "You can't access to this content"
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:456
+#: templates/premium/reports/download-reports-table.php:50
+#: templates/premium/reports/download-reports.php:8
+#: templates/premium/reports/reports - Copia.php:57 Copia.php:264
+#: templates/premium/reports/reports.php:10
+msgid "Downloads"
+msgstr ""
+
+#: includes/class.yith-wcmbs-products-manager.php:593
+#: templates/premium/frontend/downloaded-product-links.php:35
+#: templates/premium/frontend/downloaded-product-links.php:51
+#: templates/premium/frontend/my_account_plan_list_items.php:16
+#: templates/premium/frontend/my_account_plan_list_items.php:87
+msgid "Download"
+msgstr ""
+
+#: includes/class.yith-wcmbs-protected-links.php:63
+msgid "Membership Protected Links"
+msgstr ""
+
+#: includes/class.yith-wcmbs-protected-links.php:133
+#: includes/class.yith-wcmbs-protected-media.php:143
+msgid "You can't access to this content."
+msgstr ""
+
+#: includes/class.yith-wcmbs-protected-media.php:81
+msgid "Allow access"
+msgstr ""
+
+#: includes/class.yith-wcmbs-reports.php:71
+#: templates/premium/reports/download-reports.php:16
+#: templates/premium/reports/reports - Copia.php:198
+msgid "Membership download reports"
+msgstr ""
+
+#: includes/class.yith-wcmbs-reports.php:96
+#: includes/class.yith-wcmbs-reports.php:97
+#: templates/premium/reports/reports.php:7
+msgid "Reports"
+msgstr ""
+
+#: includes/class.yith-wcmbs-shortcodes.php:90
+#: templates/premium/tabs/shortcodes.php:5
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/class.yith-wcmbs-shortcodes.php:342
+#, php-format
+msgid "Locked Download: unlock it using one credit!"
+msgid_plural "Locked Download: unlock it using %s credits!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class.yith-wcmbs-shortcodes.php:527
+msgid "You don't have any membership without a subscription plan yet."
+msgstr ""
+
+#: includes/class.yith-wcmbs-shortcodes.php:534
+msgid "You don't have any membership with a subscription plan yet."
+msgstr ""
+
+#: includes/class.yith-wcmbs-shortcodes.php:537
+msgid "You don't have any membership yet."
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-dynamic-pricing-compatibility.php:63
+msgid "Include customer with membership plans"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-dynamic-pricing-compatibility.php:87
+#: includes/compatibility/class.yith-wcmbs-dynamic-pricing-compatibility.php:121
+msgid "Select plans to include"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-dynamic-pricing-compatibility.php:92
+#: includes/compatibility/class.yith-wcmbs-dynamic-pricing-compatibility.php:126
+msgid "Select plans"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-multivendor-compatibility.php:233
+#: includes/compatibility/class.yith-wcmbs-multivendor-compatibility.php:234
+#: includes/compatibility/class.yith-wcmbs-multivendor-compatibility.php:244
+msgid "Members"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-multivendor-compatibility.php:290
+msgid "Are you trying to cheat, uh?"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:81
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:167
+msgid "Subscription ID"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:113
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:282
+msgid "Reason: subscription cancelled."
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:126
+msgid "Memberships with subscription"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:141
+#, php-format
+msgid "Reason: subscription #%d deleted."
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:165
+msgid "Subscription details"
+msgstr ""
+
+#: includes/compatibility/class.yith-wcmbs-subscription-compatibility.php:313
+msgid "Subscription"
+msgstr ""
+
+#: includes/compatibility/multivendor-utils/class.yith-wcmbs-members-list-table.php:47
+msgid "Member"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:39
+msgid "Membership Cancelled"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:40
+msgid ""
+"Membership Cancelled email is sent when a customer membership is cancelled."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:46
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:47
+msgid "Membership {membership_name} cancelled"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:53
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:177
+msgid ""
+"Dear Customer {firstname} {lastname}, your membership {membership_name} is "
+"cancelled."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:153
+#: includes/emails/class.yith-wcmbs-expiring-email.php:143
+#: includes/emails/class.yith-wcmbs-welcome-email.php:153
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:155
+#: includes/emails/class.yith-wcmbs-expiring-email.php:145
+#: includes/emails/class.yith-wcmbs-welcome-email.php:155
+msgid "Enable this email notification"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:159
+#: includes/emails/class.yith-wcmbs-expiring-email.php:149
+#: includes/emails/class.yith-wcmbs-welcome-email.php:159
+msgid "Email Subject"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:161
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:168
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:175
+#: includes/emails/class.yith-wcmbs-expiring-email.php:151
+#: includes/emails/class.yith-wcmbs-expiring-email.php:158
+#: includes/emails/class.yith-wcmbs-expiring-email.php:165
+#: includes/emails/class.yith-wcmbs-welcome-email.php:161
+#: includes/emails/class.yith-wcmbs-welcome-email.php:168
+#: includes/emails/class.yith-wcmbs-welcome-email.php:175
+#, php-format
+msgid "Defaults to <code>%s</code>"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:166
+#: includes/emails/class.yith-wcmbs-expiring-email.php:156
+#: includes/emails/class.yith-wcmbs-welcome-email.php:166
+msgid "Email Heading"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:173
+#: includes/emails/class.yith-wcmbs-expiring-email.php:163
+#: includes/emails/class.yith-wcmbs-welcome-email.php:173
+msgid "Custom Message"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:180
+#: includes/emails/class.yith-wcmbs-expiring-email.php:170
+#: includes/emails/class.yith-wcmbs-welcome-email.php:180
+msgid "Email type"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-cancelled-email.php:182
+#: includes/emails/class.yith-wcmbs-expiring-email.php:172
+msgid "Choose which format of email to send."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-expiring-email.php:29
+msgid "Membership Expiring"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-expiring-email.php:30
+msgid "Membership Expiring email is sent when a membership is expiring."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-expiring-email.php:36
+#: includes/emails/class.yith-wcmbs-expiring-email.php:37
+msgid "Membership {membership_name} is expiring"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-expiring-email.php:43
+#: includes/emails/class.yith-wcmbs-expiring-email.php:167
+msgid ""
+"Dear Customer {firstname} {lastname}, your membership {membership_name} will "
+"expire on {membership_expire_date}."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-welcome-email.php:39
+msgid "Membership - Welcome"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-welcome-email.php:40
+msgid "The welcome email is sent when a customer becomes member."
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-welcome-email.php:46
+#: includes/emails/class.yith-wcmbs-welcome-email.php:47
+msgid "Welcome to membership {membership_name}"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-welcome-email.php:53
+#: includes/emails/class.yith-wcmbs-welcome-email.php:177
+msgid ""
+"Dear {firstname} {lastname}, welcome to membership {membership_name}. "
+"Expiration Date: {membership_expire_date}"
+msgstr ""
+
+#: includes/emails/class.yith-wcmbs-welcome-email.php:182
+msgid "Choose the format of the email."
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:33
+msgid "active"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:34
+msgid "paused"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:35
+msgid "suspended"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:36
+msgid "resumed"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:37
+msgid "expiring"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:38
+msgid "cancelled"
+msgstr ""
+
+#: includes/functions.yith-wcmbs.php:39
+msgid "expired"
+msgstr ""
+
+#: init.php:50
+msgid ""
+"YITH WooCommerce Membership Premium is enabled but not effective. It "
+"requires WooCommerce in order to work."
+msgstr ""
+
+#: plugin-options/settings-options.php:8
+msgid "Plan Options"
+msgstr ""
+
+#: plugin-options/settings-options.php:14
+msgid "Membership Name"
+msgstr ""
+
+#: plugin-options/settings-options.php:16
+msgid "Write the name of the membership plan."
+msgstr ""
+
+#: plugin-options/settings-options.php:25
+msgid "Select Product"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:20
+msgid "Membership Options"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:26
+msgid "Hide Contents"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:28
+msgid "Select how you want to manage contents."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:31
+msgid "Hide all"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:32
+msgid "Show alternative contents"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:33
+msgid "Show and redirect users"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:39
+msgid "Redirect to"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:41
+msgid "Insert redirecting link"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:46
+msgid "Show membership history in My Account page"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:48
+msgid ""
+"Select if you want to display the history of all user memberships in My "
+"Account page"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:53
+msgid "Allow guests to purchase membership related products"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:55
+msgid ""
+"Allow guest users to purchase a product linked to a membership without "
+"creating an account. Note: these guests won't have access to the membership "
+"plan linked to the product."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:60
+msgid "Membership advanced management"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:62
+msgid ""
+"Enable membership advanced management to delete memberships or to change "
+"whatever settings in users' memberships (expiration date, status, credits "
+"etc...). Please note: ensure you use this option only when necessary."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:67
+msgid "Membership plan on user registration"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:70
+msgid ""
+"Associate automatically the above membership plans to newly registered users"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:80
+msgid "Product in membership options"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:86
+msgid "Products in membership"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:88
+msgid "Select how you want manage products for membership."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:91
+msgid "Show products only to members"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:92
+msgid "Show products to all. Allow downloads for members"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:98
+msgid "Download link position"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:100
+#, php-format
+msgid ""
+"Choose where you want to show the download link in single product page or "
+"use the shortcode %s."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:103
+msgid "Download Tab"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:104
+msgid "Before summary"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:105
+msgid "Before description"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:106
+msgid "After description"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:107
+msgid "After \"Add to Cart\" Button"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:108
+msgid "After summary"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:109
+msgid "Use Shortcode"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:114
+msgid "Hide price and add to cart"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:116
+msgid ""
+"Hide price and \"add to cart\" button in Single Product Page if members can "
+"download the product."
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:130
+msgid "Custom Post Types"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:136
+msgid "Membership Restricted Custom Post types"
+msgstr ""
+
+#: plugin-options/settings-premium-options.php:138
+msgid "Select the custom post types you want enable for Membership"
+msgstr ""
+
+#: templates/metaboxes/restrict_access.php:8
+msgid "Everyone"
+msgstr ""
+
+#: templates/premium/bulk/bulk-edit-memberhsip-access.php:3
+msgid "Set Access"
+msgstr ""
+
+#: templates/premium/compatibility/multivendor/edit-product-vendors-taxonomy.php:9
+msgid "Manage membership plans"
+msgstr ""
+
+#: templates/premium/compatibility/multivendor/edit-product-vendors-taxonomy.php:15
+msgid "Allow vendors to manage membership plans"
+msgstr ""
+
+#: templates/premium/frontend/downloaded-product-links.php:34
+#: templates/premium/reports/download-reports-table.php:47
+#: templates/premium/reports/download-reports-table.php:64
+#: templates/premium/reports/reports - Copia.php:261 Copia.php:278
+msgid "Product"
+msgstr ""
+
+#: templates/premium/frontend/message.php:19
+#: templates/premium/metaboxes/message.php:19
+#, php-format
+msgid "sended on %1$s at %2$s"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:38
+msgid " Remaining Credits"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:39
+msgid "Next credits update"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:58
+msgid "History"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:62
+msgid "Contents"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:77
+#: templates/premium/metaboxes/membership_info_content.php:100
+msgid "Update"
+msgstr ""
+
+#: templates/premium/frontend/my_account_membership_plans.php:78
+#: templates/premium/metaboxes/membership_info_content.php:101
+msgid "Note"
+msgstr ""
+
+#: templates/premium/frontend/my_account_plan_list_items.php:14
+#: templates/premium/frontend/my_account_plan_list_items.php:85
+msgid "Type"
+msgstr ""
+
+#: templates/premium/frontend/my_account_plan_list_items.php:15
+#: templates/premium/frontend/my_account_plan_list_items.php:86
+msgid "Name"
+msgstr ""
+
+#: templates/premium/frontend/my_account_plan_list_items.php:56
+#: templates/premium/frontend/plan_list_items.php:41
+#, php-format
+msgid "Availability date: %s "
+msgstr ""
+
+#: templates/premium/frontend/my_account_plan_list_items.php:58
+#: templates/premium/frontend/plan_list_items.php:43
+#, php-format
+msgid "available after %s day since the beginning of the membership"
+msgid_plural "available after %s days since the beginning of the membership"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/premium/media/restrict_access.php:12
+#: templates/premium/metaboxes/restrict_access.php:12
+msgid "Include this item in a membership"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_actions.php:3
+msgid "Actions"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_actions.php:5
+msgid "Pause Membership"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_actions.php:8
+msgid "Resume Membership"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_actions.php:11
+msgid "Cancel Membership"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_actions.php:17
+msgid "Save Membership"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:3
+#, php-format
+msgid "Membership #%d details"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:13
+#, php-format
+msgid "Membership Plan: %s"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:18
+msgid "General Details"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:35
+msgid "Created by Admin"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:42
+msgid "User Details"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:62
+msgid ""
+"Note: when you add a user here, you won't be able to modify him/her anymore."
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:74
+msgid "Last update"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:79
+msgid "Next update"
+msgstr ""
+
+#: templates/premium/metaboxes/membership_info_content.php:96
+msgid "Membership History"
+msgstr ""
+
+#: templates/premium/metaboxes/plan_item_order.php:9
+msgid "Add Title"
+msgstr ""
+
+#: templates/premium/metaboxes/plan_item_order.php:11
+msgid "Drag and drop this entry into item list"
+msgstr ""
+
+#: templates/premium/metaboxes/plan_item_order.php:125
+msgid "Remove item from plan"
+msgstr ""
+
+#: templates/premium/metaboxes/plan_item_order.php:135
+#, php-format
+msgid "Delay Time: %s day"
+msgid_plural "Delay Time: %s days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/premium/metaboxes/plan_item_order.php:141
+msgid "Edit item"
+msgstr ""
+
+#: templates/premium/metaboxes/plan_item_order.php:148
+msgid "Show/hide item to Members"
+msgstr ""
+
+#: templates/premium/metaboxes/protected-links.php:31
+msgid "File name"
+msgstr ""
+
+#: templates/premium/metaboxes/protected-links.php:32
+msgid "File URL"
+msgstr ""
+
+#: templates/premium/metaboxes/protected-links.php:84
+msgid ""
+"Use the following shortcode to show the protected links: "
+"[membership_protected_links]"
+msgstr ""
+
+#: templates/premium/metaboxes/protected-links.php:86
+msgid "Add Link"
+msgstr ""
+
+#: templates/premium/metaboxes/restrict_access.php:23
+msgid "Plan Name"
+msgstr ""
+
+#: templates/premium/metaboxes/restrict_access.php:24
+msgid "Delay"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:38
+msgid "Custom List Style"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:43
+msgid "List Style"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:47
+msgid "None"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:48
+msgid "Dotted"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:49
+msgid "Numbers"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:60
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:155
+msgid "Color"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:69
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:164
+msgid "Background"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:78
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:173
+msgid "Font Size"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:86
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:189
+msgid "Margin Top"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:94
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:197
+msgid "Margin Right"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:102
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:205
+msgid "Margin Bottom"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:110
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:213
+msgid "Margin Left"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:118
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:221
+msgid "Padding Top"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:126
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:229
+msgid "Padding Right"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:134
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:237
+msgid "Padding Bottom"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:142
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:245
+msgid "Padding Left"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:150
+msgid "Items"
+msgstr ""
+
+#: templates/premium/metaboxes/shortcode_plan_item_list_style.php:181
+msgid "Show Icons"
+msgstr ""
+
+#: templates/premium/metaboxes/types/yith-wcmbs-ajax-products.php:31
+msgid "Search for a product"
+msgstr ""
+
+#: templates/premium/metaboxes/types/yith-wcmbs-ajax-products.php:40
+#, php-format
+msgid "Deleted product by ID: %s"
+msgstr ""
+
+#: templates/premium/metaboxes/user_info.php:9
+msgid "Username"
+msgstr ""
+
+#: templates/premium/metaboxes/user_info.php:13
+msgid "First Name"
+msgstr ""
+
+#: templates/premium/metaboxes/user_info.php:17
+msgid "Last Name"
+msgstr ""
+
+#: templates/premium/metaboxes/user_info.php:21
+msgid "E-mail"
+msgstr ""
+
+#: templates/premium/reports/download-reports-graphics.php:132
+#: templates/premium/reports/reports - Copia.php:165
+msgid "10 days"
+msgstr ""
+
+#: templates/premium/reports/download-reports-graphics.php:133
+#: templates/premium/reports/reports - Copia.php:166
+msgid "12 months"
+msgstr ""
+
+#: templates/premium/reports/download-reports-graphics.php:137
+#: templates/premium/reports/download-reports-graphics.php:148
+#: templates/premium/reports/reports - Copia.php:170 Copia.php:181
+#, php-format
+msgid "Max downloads: %s"
+msgstr ""
+
+#: templates/premium/reports/download-reports-table.php:79
+#: templates/premium/reports/reports - Copia.php:293
+#, php-format
+msgid "No downloads for user %s"
+msgstr ""
+
+#: templates/premium/reports/download-reports-table.php:82
+#: templates/premium/reports/reports - Copia.php:295
+msgid "No downloads"
+msgstr ""
+
+#: templates/premium/reports/download-reports.php:21
+#: templates/premium/reports/reports - Copia.php:203
+msgid "Filters by user"
+msgstr ""
+
+#: templates/premium/reports/download-reports.php:25
+#: templates/premium/reports/reports - Copia.php:208
+msgid "Reset Filters"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:7
+#: templates/premium/reports/reports - Copia.php:14
+msgid "Active memberships"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:32
+#: templates/premium/reports/reports - Copia.php:21
+msgid "Last actived memberships"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:37
+#: templates/premium/reports/reports - Copia.php:26
+msgid "Today"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:41
+msgid "Yesterday"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:45
+#: templates/premium/reports/reports - Copia.php:30
+msgid "7days"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:49
+#: templates/premium/reports/reports - Copia.php:34
+msgid "This month"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:53
+#: templates/premium/reports/reports - Copia.php:38
+msgid "Last month"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:57
+#: templates/premium/reports/reports - Copia.php:42
+msgid "This year"
+msgstr ""
+
+#: templates/premium/reports/membership-reports.php:64
+#: templates/premium/reports/reports - Copia.php:49
+msgid "Total membership (ever)"
+msgstr ""
+
+#: templates/premium/reports/membership-with-subscription-reports.php:12
+msgid "Membership with Subscription"
+msgstr ""
+
+#: templates/premium/reports/membership-with-subscription-reports.php:20
+msgid "active + resumed"
+msgstr ""
+
+#: templates/premium/reports/reports - Copia.php:7
+msgid "Membership Reports"
+msgstr ""
+
+#: templates/premium/reports/reports - Copia.php:221
+#, php-format
+msgid "Download reports for user %s"
+msgstr ""
+
+#: templates/premium/reports/reports.php:11
+msgid "Memberships"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:13
+msgid "Membership protected links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:15
+msgid "Prints the protected links set into a post, a page or a product"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:17
+msgid ""
+"The ID of the post, the page or the product that contains the protected "
+"links. If not set, it uses global post ID"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:18
+msgid "The CSS class of download links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:29
+msgid "Membership protected content"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:31
+msgid "Show the content in base of membership plan"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:33
+msgid ""
+"The ID of the allowed plans, separed with commas. If not set, it shows the "
+"content to members with any plan"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:34
+msgid ""
+"The type of user that can view the content. Possible values: member, non-"
+"member, guest, logged. Default: member"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:46
+msgid "Protected Media"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:48
+msgid ""
+"Print protected media link. Please note: media should be set as protected "
+"before printing the link"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:50
+msgid "ID of the protected media"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:51
+msgid "Linked text"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:55
+msgid "Membership Level Items"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:57
+msgid "Print the list of items included in a membership plan"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:59
+msgid "ID of the membership plan"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:60
+#, php-format
+msgid "Sort retrieved items by parameter. Possible values: %s"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:61
+msgid "Set ASC for ascending order or DESC for descending one (default: ASC)"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:62
+msgid ""
+"If style is set to \"default\", shortcode style is the same as in membership "
+"plan list; else, if it is not set, shortcode style can be set within "
+"membership plan"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:71
+msgid "Product download links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:73
+msgid "Print product download links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:75
+msgid "Product ID. If not specified, it prints current product download links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:76
+msgid "The css class of download links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:77
+msgid ""
+"Linked text. If it is not set, the linked text will be the name of the file "
+"set in product"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:82
+msgid "Membership history"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:84
+msgid "Print the list of every membership plan ever joined by current user"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:86
+msgid ""
+"Membership ID. If specified, it prints details of the membership associated "
+"to this ID. Else, it prints the list of every membership plan ever joined by "
+"current user"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:87
+msgid "You can set a title for this section"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:88
+msgid ""
+"You can use this attribute when premium YITH WooCommerce Subscription plugin "
+"is enabled. Set it to \"membership\" to show only memberships not associated "
+"to any subscription plan; set it to \"subscription\" to show memberships "
+"associated to a subscription plan; don't use it if you want to show all "
+"memberships."
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:99
+msgid "Membership downloaded product links"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:101
+msgid "Prints a table with links to downloaded products"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:104
+msgid "Login Form"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:106
+msgid "Print WooCommerce Login Form"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:118
+msgid "Description"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:123
+msgid "Shortcode attributes"
+msgstr ""
+
+#: templates/premium/tabs/shortcodes.php:134
+msgid "Examples"
+msgstr ""

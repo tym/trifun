@@ -1,0 +1,55 @@
+/**
+ * Membership Statuses
+ *
+ * @author Leanza Francesco
+ * @version 1.0.0
+ */
+
+/* --------- Membership Statuses ---------- */
+
+span.yith-wcmbs-membership-status {
+    border-radius    : 3px;
+    padding          : 4px 7px;
+    font-size        : 12px;
+    background-color : #a7a3a2;
+    color            : #ffffff;
+    display          : inline-block;
+    box-sizing       : border-box;
+    line-height      : 1em;
+}
+
+span.yith-wcmbs-membership-status.with-margin, span.yith-wcmbs-membership-status-with-margin {
+    margin : 3px;
+}
+
+span.yith-wcmbs-membership-status.active, span.yith-wcmbs-membership-status.resumed {
+    background : #21C32E !important;
+}
+
+span.yith-wcmbs-membership-status.expired, span.yith-wcmbs-membership-status.cancelled {
+    background : #e00030 !important;
+}
+
+span.yith-wcmbs-membership-status.expiring {
+    background : #f1b033 !important;
+}
+
+/* --------- Membership Status TEXT---------- */
+
+.yith-wcmbs-membership-status-text {
+    color          : #a7a3a2;
+    text-transform : uppercase;
+    font-weight    : 600;
+}
+
+.yith-wcmbs-membership-status-text.active, .yith-wcmbs-membership-status-text.resumed {
+    color : #21C32E !important;
+}
+
+.yith-wcmbs-membership-status-text.expired, .yith-wcmbs-membership-status-text.cancelled {
+    color : #e00030 !important;
+}
+
+.yith-wcmbs-membership-status-text.expiring {
+    color : #f1b033 !important;
+}

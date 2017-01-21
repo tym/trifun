@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Gift Card\n"
+"POT-Creation-Date: 2013-12-09 04:14+0100\n"
+"PO-Revision-Date: 2013-12-09 04:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: Isaac Oyelowo <scopes_oye@yahoo.com>\n"
+"Language: english\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: woocommerce-gift-card.php:68
+msgid "Woocommerce Gifts"
+msgstr ""
+
+#: woocommerce-gift-card.php:75
+msgid "Usage Limit"
+msgstr ""
+
+#: woocommerce-gift-card.php:75
+msgid "(It's always advisable to put this at 1.)"
+msgstr ""
+
+#: woocommerce-gift-card.php:79
+msgid "Expiry Date"
+msgstr ""
+
+#: woocommerce-gift-card.php:79
+msgid ""
+"(The date this coupon will expire, YYYY-MM-DD. Leave blank to put it at "
+"never expire)"
+msgstr ""
+
+#: woocommerce-gift-card.php:83
+msgid "Exclude Products By ID"
+msgstr ""
+
+#: woocommerce-gift-card.php:83
+msgid "(separate each ID with comma)"
+msgstr ""
+
+#: woocommerce-gift-card.php:116
+msgid "Gift Email Settings"
+msgstr ""
+
+#: woocommerce-gift-card.php:120
+msgid "Email subject"
+msgstr ""
+
+#: woocommerce-gift-card.php:123
+msgid "Email template"
+msgstr ""
+
+#: woocommerce-gift-card.php:126
+msgid "Save"
+msgstr ""
+
+#: woocommerce-gift-card.php:190
+msgid "I'm sending this Gift Card to someone"
+msgstr ""
+
+#: woocommerce-gift-card.php:192
+msgid "Recipient's name"
+msgstr ""
+
+#: woocommerce-gift-card.php:196
+msgid "Recipient's email"
+msgstr ""
+
+#: woocommerce-gift-card.php:200
+msgid "Message to Recipient"
+msgstr ""
+
+#: woocommerce-gift-card.php:270
+msgid "Gift"
+msgstr ""
+
+#: woocommerce-gift-card.php:271
+msgid "Gift products."
+msgstr ""
+
+#: frontend/gifts-listing.php:62
+msgid "There are no gift vouchers yet."
+msgstr ""

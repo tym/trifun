@@ -1,0 +1,76 @@
+td.suborder.column-suborder, th#suborder {
+	display: none !important;
+	visibility: hidden;
+}
+
+body.vendor_limited_access #menu-posts-product, body.vendor_limited_access #toplevel_page_yith_vendor_settings, body.vendor_limited_access #menu-posts-yith-wcmbs-plan, body.vendor_limited_access #menu-media, body.vendor_limited_access #toplevel_page_yith_vendor_commissions, body.vendor_limited_access #toplevel_page_wc-reports {
+	display: none;
+	visibility: hidden;
+}
+
+
+body.vendor_limited_access .check-column th, body.vendor_limited_access .order_data_column_container .order_data_column:nth-child(n+1):nth-child(n+2), body.vendor_limited_access .order_number{
+	display: none;
+}
+
+/*body.vendor_limited_access #order_data #order_date, body.vendor_limited_access #order_data #order_date_hour, body.vendor_limited_access #order_data #order_date_minute, body.vendor_limited_access #order_data #s2id_customer_user, body.vendor_limited_access #normal-sortables #woocommerce-order-items{
+	pointer-events:none;
+}*/
+
+body.vendor_limited_access .wp-list-table{
+	table-layout: auto;
+}
+body.vendor_limited_access .order_title, body.vendor_limited_access .column-order_items{
+	width: 30%
+}
+body.vendor_limited_access .wp-list-table .check-column{
+	display: none;
+}
+
+body.vendor_limited_access #order_line_items tr.item td.name .view .display_meta tr th{
+	width: 50%;
+}
+
+body.vendor_limited_access .wc-order-data-row.wc-order-totals-items.wc-order-items-editable{
+	display: none;
+	visibility: hidden;
+}
+
+
+body.vendor_limited_access #order_line_items tr.item.Zero.Rate.yith-wcpb-admin-bundled-item .item_cost span,
+body.vendor_limited_access #order_line_items tr.item.Zero.Rate.yith-wcpb-admin-bundled-item .quantity .times,
+body.vendor_limited_access #order_line_items tr.item.Zero.Rate.yith-wcpb-admin-bundled-item .line_cost span,
+body.vendor_limited_access #order_line_items tr.item.Zero.Rate.yith-wcpb-admin-bundled-item .line_tax span{
+	display: none;
+	visibility: hidden;
+}
+
+body.vendor_limited_access .notice{
+	display: none;
+	visibility: hidden;
+}
+
+body.vendor_limited_access .tablenav{
+	display: none;
+}
+table.trifi-is-used-table {
+    width: 30%;
+}
+
+.trifi-is-used-table th {
+	width: 90px;
+}
+
+/*.parent_order ::before{
+	content: 'TRIFUN-'
+}*/
+
+
+/*body.vendor_limited_access .tablenav .bulkactions, body.vendor_limited_access .tablenav .actions #filter-by-date, body.vendor_limited_access .tablenav .actions #dropdown_shop_order_subtype, body.vendor_limited_access .tablenav .actions #dropdown_shop_order_subtype button, body.vendor_limited_access .search-box {
+	display: none;
+}*/
+
+
+/*.wp-admin #wpwrap .yith-wcpb-admin-bundled-item{
+	display: none;
+}*/

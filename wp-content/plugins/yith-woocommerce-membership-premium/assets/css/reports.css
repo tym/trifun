@@ -1,0 +1,198 @@
+/**
+ * Reports
+ *
+ * @author Leanza Francesco
+ */
+
+#yith-wcmbs-membership-reports .yith-wcmbs-reports-metabox {
+    width        : 280px;
+    float        : left;
+    margin-right : 20px;
+}
+
+#yith-wcmbs-membership-reports .chosen-container {
+    width : auto !important;
+}
+
+.yith-wcmbs-reports-filters {
+    padding : 10px 0;
+}
+
+.yith-wcmbs-reports-metabox h2 {
+    border-bottom : 1px solid #e5e5e5;
+    font-size     : 14px !important;
+    padding       : 5px 10px !important;
+    margin        : 0 !important;
+}
+
+.yith-wcmbs-reports-big-number {
+    text-align : center;
+    font-size  : 60px;
+    margin     : 10px 0;
+}
+
+.yith-wcmbs-reports-content {
+    padding : 10px;
+}
+
+.yith-wcmbs-reports-subtitle {
+    padding        : 0;
+    margin         : 0;
+    font-size      : 11px;
+    font-weight    : 700;
+    text-align     : center;
+    color          : #777;
+}
+
+.yith-wcmbs-reports-table-membership * {
+    text-align : left;
+}
+
+.yith-wcmbs-reports-table-membership {
+    width : 100%;
+}
+
+.yith-wcmbs-reports-table-membership th, .yith-wcmbs-reports-table-membership td {
+    padding : 10px;
+}
+
+.yith-wcmbs-reports-table-membership th {
+    background : #eeeeee;
+}
+
+.yith-wcmbs-reports-table-membership td {
+    background  : #555;
+    color       : #fff;
+    font-weight : 600;
+    text-align  : center;
+}
+
+.yith-wcmbs-reports-table-downloads * {
+    text-align : left;
+}
+
+.yith-wcmbs-reports-table-downloads {
+    width : 100%;
+}
+
+.yith-wcmbs-reports-table-downloads th, .yith-wcmbs-reports-table-downloads td {
+    padding : 10px;
+}
+
+.yith-wcmbs-reports-table-downloads td {
+    background : #eeeeee;
+}
+
+.yith-wcmbs-reports-table-downloads td.title-col a {
+    text-decoration : none;
+    margin          : 0 5px;
+}
+
+.yith-wcmbs-reports-table-downloads td.downloads-col {
+    text-align : center;
+}
+
+.yith-wcmbs-reports-table-downloads th {
+    background  : #555;
+    color       : #fff;
+    font-weight : 600;
+    text-align  : center;
+}
+
+.yith-wcmbs-reports-table-downloads th a {
+    color           : #fff;
+    font-weight     : 600;
+    text-decoration : none;
+    cursor          : pointer;
+}
+
+.yith-wcmbs-reports-table-downloads th a:focus {
+    box-shadow : none;
+}
+
+.yith-wcmbs-reports-table-downloads th a:hover {
+    text-shadow : 0px 0px 5px #000000;
+}
+
+.yith-wcmbs-reports-table-downloads th a span {
+    vertical-align : middle !important;
+}
+
+.yith-wcmbs-reports-downloads-table-date {
+    width : 100%;
+}
+
+.yith-wcmbs-reports-downloads-table-date td {
+    height : 150px;
+}
+
+.yith-wcmbs-reports-downloads-table-date th {
+    font-size   : 10px;
+    color       : #555555;
+    font-weight : 400;
+}
+
+.yith-wcmbs-reports-downloads-table-date td {
+    vertical-align : bottom;
+}
+
+.yith-wcmbs-reports-downloads-table-date-grafic {
+    background    : #999;
+    width         : 50%;
+    margin        : 0 auto;
+    border-bottom : 1px solid #999;
+}
+
+.yith-wcmbs-tabs {
+    border-radius : 0 !important;
+    border        : 0 none !important;
+    background    : transparent !important;
+}
+
+.yith-wcmbs-tabs ul li {
+    border-radius : 0px;
+    border        : 0 none;
+}
+
+.yith-wcmbs-tabs ul li.ui-state-default {
+    border-radius : 0px;
+    border        : 0 none;
+    background    : #e3e3e3;
+    color         : #555;
+}
+
+.yith-wcmbs-tabs ul li.ui-state-default a {
+    color : #555;
+}
+
+.yith-wcmbs-tabs ul li.ui-state-active {
+    border-radius : 0px;
+    border        : 0 none;
+    background    : #f1f1f1;
+    color         : #555;
+}
+
+.yith-wcmbs-tabs ul li.ui-state-active a {
+    color : #555;
+}
+
+.yith-wcmbs-tabs ul {
+    padding       : 0 !important;
+    border-radius : 0;
+    border        : 0 none;
+    background    : transparent;
+}
+
+.yith-wcmbs-tabs .ui-tabs-panel {
+    padding       : 5px !important;
+    background    : #f1f1f1 !important;
+    border-radius : 0 !important;
+}
+
+.yith-wcmbs-tabs a:focus {
+    box-shadow : none !important;
+}
+
+p.yith-wcmbs-reports-downloads-max {
+    margin : 5px 10px 15px 10px;
+}
